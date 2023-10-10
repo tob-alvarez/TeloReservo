@@ -1,13 +1,13 @@
 import React from "react";
 import { Text } from "react-native";
-import Layout from "./Layout";
+import Layout from "../Layout";
 
-const Card = () => {
+const Card2 = () => {
   return (
     <Layout>
-      <Text>Hola</Text>
+      <Text>Card2</Text>
     </Layout>
   );
 };
 
-export default Card;
+export default Card2;
