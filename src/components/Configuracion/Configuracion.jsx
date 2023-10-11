@@ -8,6 +8,7 @@ import {
   TextInput,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import Card3 from "../Cards/Card3";
 
 const Configuracion = () => {
   const [buscador, setBuscador] = useState("");
@@ -39,6 +40,7 @@ const Configuracion = () => {
           <Ionicons name="search" size={24} color="black" />
         </TouchableOpacity>
       </View>
+      <Card3></Card3>
     </ScrollView>
   );
 };
