@@ -57,7 +57,7 @@ const Layout = ({ children }) => {
           <Tab.Screen name="Configuración" component={Configuracion} />
         </Tab.Navigator>
       </NavigationContainer>
-      <View style={styles.separadorNavBottom}></View>
+      {/* <View style={styles.separadorNavBottom}></View> */}
     </View>
   );
 };
