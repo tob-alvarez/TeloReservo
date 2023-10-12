@@ -40,7 +40,10 @@ const Home = () => {
           <Ionicons name="search" size={24} color="black" />
         </TouchableOpacity>
       </View>
-      <Card2></Card2>
+      <Card2/>
+      <Card2/>
+      <Card2/>
+
     </ScrollView>
   );
 };
