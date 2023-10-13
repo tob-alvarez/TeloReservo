@@ -57,7 +57,6 @@ const Layout = ({ children }) => {
           <Tab.Screen name="Configuración" component={Configuracion} />
         </Tab.Navigator>
       </NavigationContainer>
-      {/* <View style={styles.separadorNavBottom}></View> */}
     </View>
   );
 };
@@ -67,10 +66,5 @@ export default Layout;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  separadorNavBottom: {
-    margin: 20,
-    height: 5,
-    backgroundColor: "transparent",
   },
 });
