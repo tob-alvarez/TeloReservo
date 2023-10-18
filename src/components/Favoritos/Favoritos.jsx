@@ -1,14 +1,7 @@
 import React, { useState } from "react";
-import {
-  Text,
-  View,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  TextInput,
-  Image,
-} from "react-native";
+import { ScrollView } from "react-native";
 import ContentBeforeLoginFavoritos from "./ContentBeforeLoginFavoritos";
+import CardFav from "../Cards/CardFav";
 
 const Favoritos = () => {
   return (
@@ -19,7 +12,9 @@ const Favoritos = () => {
       }}
       contentContainerStyle={{ flexGrow: 1 }}
     >
-      <ContentBeforeLoginFavoritos />
+      {/* <ContentBeforeLoginFavoritos /> */}
+      {/* <CardFavoritos></CardFavoritos> */}
+      <CardFav></CardFav>
     </ScrollView>
   );
 };

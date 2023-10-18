@@ -54,7 +54,7 @@ const Home = () => {
             placeholder="Buscar..."
             onPress={() => setModalVisible(true)}
           >
-            <Text>Ej: San Miguel de Tucumán</Text>
+            <Text style={{ color: "grey" }}>Ej: San Miguel de Tucumán</Text>
           </Pressable>
           <Text style={styles.separador}></Text>
           <Pressable style={styles.BotonRosita} placeholder="Buscar...">
