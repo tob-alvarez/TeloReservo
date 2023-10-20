@@ -1,8 +1,19 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, ScrollView } from "react-native";
+import Constants from "expo-constants";
 
 const Telo = () => {
-  return <Text>hola</Text>;
+  return (
+    <ScrollView
+      style={{
+        marginTop: Constants.statusBarHeight,
+        backgroundColor: "#f0f0f0",
+      }}
+      contentContainerStyle={{ flexGrow: 1 }}
+    >
+      <Text>Hola</Text>
+    </ScrollView>
+  );
 };
 
 export default Telo;

@@ -1,11 +1,38 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Ionicons } from "@expo/vector-icons";
+import { View, StyleSheet } from "react-native";
+
+//screens
 import Home from "../Home/Home";
 import Favoritos from "../Favoritos/Favoritos";
 import Configuracion from "../Configuracion/Configuracion";
-import { View, StyleSheet } from "react-native";
+import Telo from "../Telo/Telo";
+
+const FavoritosStackNav = createNativeStackNavigator();
+
+function StackFavoritos() {
+  return (
+    <FavoritosStackNav.Navigator initialRoute="FavoritosHome">
+      <FavoritosStackNav.Screen
+        name="FavoritosHome"
+        component={Favoritos}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <FavoritosStackNav.Screen
+        name="FavoritosTelo"
+        component={Telo}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </FavoritosStackNav.Navigator>
+  );
+}
 
 const Tab = createBottomTabNavigator();
 
@@ -50,11 +77,26 @@ const Layout = ({ children }) => {
           <Tab.Screen
             name="Home"
             component={Home}
+            options={{
+              headerShown: false,
+            }}
             // options={{ tabBarBadge: 3 }}
             // esta opcion es para poner notificaciones
           />
-          <Tab.Screen name="Favoritos" component={Favoritos} />
-          <Tab.Screen name="Configuración" component={Configuracion} />
+          <Tab.Screen
+            name="Favoritos"
+            component={StackFavoritos}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Tab.Screen
+            name="Configuración"
+            component={Configuracion}
+            options={{
+              headerShown: false,
+            }}
+          />
         </Tab.Navigator>
       </NavigationContainer>
     </View>

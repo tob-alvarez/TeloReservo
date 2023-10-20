@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+import Constants from "expo-constants";
 import {
   Text,
   View,
   ScrollView,
   StyleSheet,
-  TouchableOpacity,
-  TextInput,
   Image,
   Modal,
   Pressable,
@@ -29,7 +28,7 @@ const Home = () => {
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView
         style={{
-          // marginTop: Constants.statusBarHeight,
+          marginTop: Constants.statusBarHeight,
           backgroundColor: "#f0f0f0",
         }}
         contentContainerStyle={{ flexGrow: 1 }}
