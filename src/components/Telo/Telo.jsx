@@ -6,7 +6,7 @@ const Telo = () => {
   return (
     <ScrollView
       style={{
-        marginTop: Constants.statusBarHeight,
+        // marginTop: Constants.statusBarHeight,
         backgroundColor: "#f0f0f0",
       }}
       contentContainerStyle={{ flexGrow: 1 }}

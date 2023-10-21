@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import Constants from "expo-constants";
+import { useNavigation } from "@react-navigation/native";
 import {
   Text,
   View,
   ScrollView,
   StyleSheet,
   Image,
-  Modal,
   Pressable,
   RefreshControl,
   SafeAreaView,
 } from "react-native";
 
 const Home = () => {
+  const { navigate } = useNavigation();
   const [refreshing, setRefreshing] = React.useState(false);
 
   const onRefresh = React.useCallback(() => {
@@ -21,8 +22,6 @@ const Home = () => {
       setRefreshing(false);
     }, 2000);
   }, []);
-
-  const [modalVisible, setModalVisible] = useState(false);
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -51,7 +50,9 @@ const Home = () => {
           <Pressable
             style={styles.input}
             placeholder="Buscar..."
-            onPress={() => setModalVisible(true)}
+            onPress={() => {
+              navigate("Prueba");
+            }}
           >
             <Text style={{ color: "grey" }}>Ej: San Miguel de Tucumán</Text>
           </Pressable>
@@ -59,29 +60,6 @@ const Home = () => {
           <Pressable style={styles.BotonRosita} placeholder="Buscar...">
             <Text>Buscar</Text>
           </Pressable>
-        </View>
-        <View style={styles.centeredView}>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-              Alert.alert("Modal has been closed.");
-              setModalVisible(!modalVisible);
-            }}
-          >
-            <View style={styles.centeredView}>
-              <View style={styles.modalView}>
-                <Text style={styles.modalText}>Modal con ubicaciones</Text>
-                <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => setModalVisible(!modalVisible)}
-                >
-                  <Text style={styles.textStyle}>Hide Modal</Text>
-                </Pressable>
-              </View>
-            </View>
-          </Modal>
         </View>
       </ScrollView>
     </SafeAreaView>
