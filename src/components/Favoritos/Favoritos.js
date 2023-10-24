@@ -11,13 +11,13 @@ const Favoritos = () => {
   return (
     <ScrollView
       style={{
-        marginTop: Constants.statusBarHeight,
+        // marginTop: Constants.statusBarHeight,
         backgroundColor: "#f0f0f0",
       }}
       contentContainerStyle={{ flexGrow: 1 }}
     >
       {/* <ContentBeforeLoginFavoritos /> */}
-      <TouchableOpacity onPress={() => navigation.navigate("FavoritosTelo")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Telo")}>
         <CardFav></CardFav>
       </TouchableOpacity>
     </ScrollView>

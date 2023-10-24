@@ -1,22 +1,33 @@
 import React, { useState } from "react";
-import { DarkTheme, NavigationContainer } from "@react-navigation/native";
+import { DarkTheme, NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Ionicons } from "@expo/vector-icons";
 import { View, StyleSheet, Pressable } from "react-native";
+import { Entypo } from '@expo/vector-icons';
 
-//screens
+//screensHome
 import Home from "../Home/Home";
-import Favoritos from "../Favoritos/Favoritos";
-import Configuracion from "../Configuracion/Configuracion";
-import Telo from "../Telo/Telo";
-import CardFav from "../Cards/CardFav";
+import FiltroModal from "../Modals/FiltroModal";
+import ListaTelos from "../Telo/ListaTelos";
+import SortModal from "../Modals/SortModal";
 import Maps from "../Maps/Maps";
+//screenFavorites
+import Favoritos from "../Favoritos/Favoritos";
+import Telo from "../Telo/Telo";
+//screenConfiguration
+import Configuracion from "../Configuracion/Configuracion";
 
 const FavoritosStackNav = createNativeStackNavigator();
 const HomeStackNav = createNativeStackNavigator();
 
 function StackHome() {
+
+  const navigate = useNavigation();
+  const handleBack = () => {
+    navigate.goBack();
+  }
+
   return (
     <HomeStackNav.Navigator initialRoute="HomeFeed">
       <HomeStackNav.Screen
@@ -33,40 +44,61 @@ function StackHome() {
           presentation: "modal",
         }}
       />
+      <HomeStackNav.Screen
+        name="Lista Telos"
+        component={ListaTelos}
+        options={{
+          presentation: "card",
+          headerShown: false,
+        }}
+      />
+      <HomeStackNav.Screen
+        name="Ordenar por"
+        component={SortModal}
+        options={{
+          presentation: "modal",
+          headerRight: () => (
+            <Pressable>
+              <Entypo name="cross" size={26} color="black" onPress={handleBack} />
+            </Pressable>
+          ),
+        }}
+      />
+      <HomeStackNav.Screen
+        name="Filtrar por"
+        component={FiltroModal}
+        options={{
+          presentation: "modal",
+          headerRight: () => (
+            <Pressable>
+              <Entypo name="cross" size={26} color="black" onPress={handleBack} />
+            </Pressable>
+          ),
+        }}
+      />
     </HomeStackNav.Navigator>
   );
 }
 
 function StackFavoritos() {
-  const [fav, setFav] = useState(true);
 
-  handleFav = () => {
-    setFav(!fav);
-  };
 
   return (
     <FavoritosStackNav.Navigator initialRoute="FavoritosHome">
       <FavoritosStackNav.Screen
-        name="FavoritosHome"
+        name="Tus favoritos"
         component={Favoritos}
-        options={{
-          headerShown: false,
-        }}
+        options={
+          {
+            // headerShown: false,
+          }
+        }
       />
       <FavoritosStackNav.Screen
-        name="FavoritosTelo"
+        name="Telo"
         component={Telo}
         options={{
           // headerShown: false,
-          headerRight: () => (
-            <Pressable onPress={handleFav}>
-              <Ionicons
-                name={fav ? "ios-heart-sharp" : "ios-heart-outline"}
-                size={30}
-                color={"red"}
-              />
-            </Pressable>
-          ),
         }}
       />
     </FavoritosStackNav.Navigator>
@@ -114,8 +146,8 @@ function TabGroup() {
         options={{
           headerShown: false,
         }}
-        // options={{ tabBarBadge: 3 }}
-        // esta opcion es para poner notificaciones
+      // options={{ tabBarBadge: 3 }}
+      // esta opcion es para poner notificaciones
       />
       <Tab.Screen
         name="Favoritos"
