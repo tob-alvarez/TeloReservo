@@ -51,7 +51,7 @@ const Home = () => {
             style={styles.input}
             placeholder="Buscar..."
             onPress={() => {
-              navigate("Prueba");
+              navigate("Mapa");
             }}
           >
             <Text style={{ color: "grey" }}>Ej: San Miguel de Tucumán</Text>

@@ -11,6 +11,7 @@ import Favoritos from "../Favoritos/Favoritos";
 import Configuracion from "../Configuracion/Configuracion";
 import Telo from "../Telo/Telo";
 import CardFav from "../Cards/CardFav";
+import Maps from "../Maps/Maps";
 
 const FavoritosStackNav = createNativeStackNavigator();
 const HomeStackNav = createNativeStackNavigator();
@@ -26,8 +27,8 @@ function StackHome() {
         }}
       />
       <HomeStackNav.Screen
-        name="Prueba"
-        component={CardFav}
+        name="Mapa"
+        component={Maps}
         options={{
           presentation: "modal",
         }}
