@@ -57,7 +57,7 @@ const MyCarousel = () => {
       loop={true}
       layout={'default'}
       sliderWidth={Dimensions.get('window').width}
-      itemWidth={340}
+      itemWidth={245}
     />
   );
 };

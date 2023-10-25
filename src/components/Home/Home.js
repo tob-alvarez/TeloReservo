@@ -10,6 +10,7 @@ import {
   Pressable,
   RefreshControl,
   SafeAreaView,
+  Modal,
 } from "react-native";
 import MyCarousel from "../Carousel/Carousel";
 
@@ -51,46 +52,6 @@ const Home = () => {
           <View>
             <Text style={{ color: "grey", fontSize: 8, marginBottom: 5 }}>Ubicación</Text>
             <Pressable
-              style={styles.input}
-              placeholder="Buscar..."
-              onPress={() => setModalVisible(true)}
-            >
-              <Text style={{ color: "grey" }}>Ej: San Miguel de Tucumán</Text>
-            </Pressable>
-          </View>
-          <Text style={styles.separador}></Text>
-          <Pressable style={styles.BotonRosita} placeholder="Buscar...">
-            <Text>Buscar</Text>
-          </Pressable>
-        </View>
-        <View style={{ marginTop:20, height: 200, justifyContent: "start" }}>
-            <Text style={{ marginStart: 20, fontSize:12, color:"rgb(100, 100, 100)" }}>V I S T O S    R E C I E N T E M E N T E</Text>
-            <MyCarousel />
-          </View>
-        <View style={styles.centeredView}>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={modalVisible}
-            onRequestClose={() => {
-              Alert.alert("Modal has been closed.");
-              setModalVisible(!modalVisible);
-            }}
-          >
-            <View style={styles.centeredView}>
-              <View style={styles.modalView}>
-                <Text style={styles.modalText}>Modal con ubicaciones</Text>
-                <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => setModalVisible(!modalVisible)}
-                >
-                  <Text style={styles.textStyle}>Hide Modal</Text>
-                </Pressable>
-              </View>
-            </View>
-          </Modal>
-          
-          <Pressable
             style={styles.input}
             placeholder="Buscar..."
             onPress={() => {
@@ -99,6 +60,8 @@ const Home = () => {
           >
             <Text style={{ color: "grey" }}>Ej: San Miguel de Tucumán</Text>
           </Pressable>
+          
+          </View>
           <Text style={styles.separador}></Text>
           <Pressable
             style={styles.BotonRosita}
@@ -109,6 +72,13 @@ const Home = () => {
           >
             <Text>Buscar</Text>
           </Pressable>
+        </View>
+        <View style={{ marginTop:20, height: 200, justifyContent: "start" }}>
+            <Text style={{ marginStart: 20, fontSize:12, color:"rgb(100, 100, 100)" }}>V I S T O S    R E C I E N T E M E N T E</Text>
+            <MyCarousel />
+          </View>
+        <View style={styles.centeredView}>
+          
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -126,12 +96,15 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "start",
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 10,
     padding: 10,
+    paddingTop:1,
+    paddingLeft:15,
+    paddingRight:15,
     borderColor: "transparent",
     backgroundColor: "#fff",
     margin: 10,
-    height: "25%",
+    height: "20%",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -146,7 +119,7 @@ const styles = StyleSheet.create({
     paddingStart: 10,
     borderColor: "#ccc",
     backgroundColor: "#f0f0f0",
-    height: 40,
+    height: 35,
     width: "100%",
     justifyContent: "center",
   },

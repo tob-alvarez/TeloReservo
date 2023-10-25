@@ -3,34 +3,33 @@ import { View, Text, StyleSheet, Image } from "react-native";
 
 export const CardRecientes = () => {
   return (
-    <View style={[styles.card, styles.cardElevated]}>
-      <Image source={{ uri: 'https://elcomercio.pe/resizer/SgYtnAzluKyPeVdqdW-pWI1_4n4=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/KH4UYLZFOBFTTCGJBWADDJ4VEI.jpg' }}
-        style={styles.cardImage}></Image>
-      <View style={styles.cardBody}>
-        <Text style={styles.cardTitle}>Telo Pingo</Text>
-        <View style={styles.cardfooter}>
-          <View style={styles.cardCalificacionCont}>
-            <Text style={styles.cardCalificacion}> 5,2 ⭐</Text>
+      <View style={[styles.card, styles.cardElevated]}>
+        <Image source={{ uri: 'https://elcomercio.pe/resizer/SgYtnAzluKyPeVdqdW-pWI1_4n4=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/KH4UYLZFOBFTTCGJBWADDJ4VEI.jpg' }}
+          style={styles.cardImage}></Image>
+        <View style={styles.cardBody}>
+          <Text style={styles.cardTitle }>Telo Pingo</Text>
+          <View style={styles.cardfooter}>
+            <View style={styles.cardCalificacionCont}>
+              <Text style={styles.cardCalificacion}> 5,2 ⭐</Text>
+            </View>
+            <Text style={styles.cardUbicacion}> aca a la vuelta</Text>
           </View>
-          <Text style={styles.cardUbicacion}> aca a la vuelta</Text>
         </View>
-      </View>
-      {/* <TouchableOpacity>
+        {/* <TouchableOpacity>
   <View style={styles.cardContent}>
   <Text>hola</Text>
   </View>
 </TouchableOpacity> */}
-    </View>
-    //</View >
+      </View>
   )
 }
 
 const styles = StyleSheet.create({
 
-  
+
   card: {
-    width: 350,
-    height: 150,
+    width: 240,
+    height: 120,
     borderRadius: 10,
     marginVertical: 12,
     marginHorizontal: 16,
@@ -57,11 +56,11 @@ const styles = StyleSheet.create({
 
   },
   cardBody: {
-    position: "absolute", 
-    bottom: 0, 
-    left: 0, 
-    right: 0, 
-    backgroundColor: "rgba(0, 0, 0, 0.5)", 
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.3)", 
     padding: 10,
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
@@ -69,48 +68,49 @@ const styles = StyleSheet.create({
 
   cardTitle: {
     color: "#ffffff",
-    fontSize: 22,
+    fontSize: 15,
     fontWeight: "bold",
   },
 
   cardUbicacion: {
     color: "#ffffff",
-    fontSize: 14,
+    fontSize: 12,
   },
-  
-  
+
+
   cardCalificacion: {
     color: "#ffffff",
+    fontSize: 13
   },
-  
+
   cardCalificacionCont: {
-    borderRadius: 5,
+    borderRadius: 8,
     backgroundColor: "rgba(0, 1000, 0, 0.6)", // Fondo semitransparente para el texto
-    height: 24,
+    height: 22,
     justifyContent: "center",
-    marginEnd:5,
+    marginEnd: 5,
   },
-  
-  cardfooter:{
-    flexDirection: "row" ,
+
+  cardfooter: {
+    flexDirection: "row",
     alignItems: "center",
   }
   // cardContent: {
   //   marginHorizontal: 18,
   //   marginVertical: 10,
   // }
-// headingText: {
+  // headingText: {
   //   fontSize: 24,
   //   fontWeight: 'bold',
   //   paddingHorizontal: 8,
 
   // },
 
-// cardDescription: {
+  // cardDescription: {
   //   color: "#ffffff",
   //   fontSize: 12,
   // },
-  
+
 
 
 })
