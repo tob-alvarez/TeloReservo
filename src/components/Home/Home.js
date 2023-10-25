@@ -1,13 +1,12 @@
 import React, { useState } from "react";
+import Constants from "expo-constants";
+import { useNavigation } from "@react-navigation/native";
 import {
   Text,
   View,
   ScrollView,
   StyleSheet,
-  TouchableOpacity,
-  TextInput,
   Image,
-  Modal,
   Pressable,
   RefreshControl,
   SafeAreaView,
@@ -15,6 +14,7 @@ import {
 import MyCarousel from "../Carousel/Carousel";
 
 const Home = () => {
+  const { navigate } = useNavigation();
   const [refreshing, setRefreshing] = React.useState(false);
 
   const onRefresh = React.useCallback(() => {
@@ -24,13 +24,11 @@ const Home = () => {
     }, 2000);
   }, []);
 
-  const [modalVisible, setModalVisible] = useState(false);
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ScrollView
         style={{
-          // marginTop: Constants.statusBarHeight,
+          marginTop: Constants.statusBarHeight,
           backgroundColor: "#f0f0f0",
         }}
         contentContainerStyle={{ flexGrow: 1 }}
@@ -92,6 +90,25 @@ const Home = () => {
             </View>
           </Modal>
           
+          <Pressable
+            style={styles.input}
+            placeholder="Buscar..."
+            onPress={() => {
+              navigate("Mapa");
+            }}
+          >
+            <Text style={{ color: "grey" }}>Ej: San Miguel de Tucumán</Text>
+          </Pressable>
+          <Text style={styles.separador}></Text>
+          <Pressable
+            style={styles.BotonRosita}
+            placeholder="Buscar..."
+            onPress={() => {
+              navigate("Lista Telos");
+            }}
+          >
+            <Text>Buscar</Text>
+          </Pressable>
         </View>
       </ScrollView>
     </SafeAreaView>

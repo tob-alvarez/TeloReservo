@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import { ScrollView } from "react-native";
+import Constants from "expo-constants";
+import { ScrollView, TouchableOpacity } from "react-native";
 import ContentBeforeLoginFavoritos from "./ContentBeforeLoginFavoritos";
 import CardFav from "../Cards/CardFav";
+import { useNavigation } from "@react-navigation/native";
 
 const Favoritos = () => {
+  const navigation = useNavigation();
+
   return (
     <ScrollView
       style={{
@@ -13,8 +17,9 @@ const Favoritos = () => {
       contentContainerStyle={{ flexGrow: 1 }}
     >
       {/* <ContentBeforeLoginFavoritos /> */}
-      {/* <CardFavoritos></CardFavoritos> */}
-      <CardFav></CardFav>
+      <TouchableOpacity onPress={() => navigation.navigate("Telo")}>
+        <CardFav></CardFav>
+      </TouchableOpacity>
     </ScrollView>
   );
 };

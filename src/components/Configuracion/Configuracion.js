@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { ScrollView } from "react-native";
 import ContentBeforeLoginConfig from "./ContentBeforeLoginConfig";
+import Constants from "expo-constants";
 
 const Configuracion = () => {
   return (
     <ScrollView
       style={{
-        // marginTop: Constants.statusBarHeight,
+        marginTop: Constants.statusBarHeight,
         backgroundColor: "#f0f0f0",
       }}
       contentContainerStyle={{ flexGrow: 1 }}
