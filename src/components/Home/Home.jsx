@@ -65,6 +65,10 @@ const Home = () => {
             <Text>Buscar</Text>
           </Pressable>
         </View>
+        <View style={{ marginTop:20, height: 200, justifyContent: "start" }}>
+            <Text style={{ marginStart: 20, fontSize:12, color:"rgb(100, 100, 100)" }}>V I S T O S    R E C I E N T E M E N T E</Text>
+            <MyCarousel />
+          </View>
         <View style={styles.centeredView}>
           <Modal
             animationType="slide"
@@ -87,10 +91,7 @@ const Home = () => {
               </View>
             </View>
           </Modal>
-        <View>
-          <Text>VISTOS RECIENTEMENTE</Text>
-          <MyCarousel/>
-        </View>
+          
         </View>
       </ScrollView>
     </SafeAreaView>

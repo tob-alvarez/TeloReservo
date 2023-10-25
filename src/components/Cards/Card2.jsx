@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, StyleSheet, View, TouchableOpacity, Image } from "react-native";
 
-const Card2 = () => {
+export const Card2 = () => {
   return (
 
 
@@ -111,5 +111,3 @@ const styles = StyleSheet.create({
 
 })
 
-
-export default Card2;

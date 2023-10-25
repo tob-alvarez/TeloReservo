@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions, image } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
-import { Card2 } from "../Cards/Card2";
+import { CardRecientes } from '../Cards/CardRecientes';
 
 const MyCarousel = () => {
 
@@ -9,7 +10,7 @@ const MyCarousel = () => {
     {
       heading: 'Telo 1',
       imageUri: 'URL_DE_LA_IMAGEN_1',
-      title:'titulo',
+      title: 'titulo',
       label: 'Etiqueta 1',
       description: 'Descripción del primer elemento del carrusel.',
       footer: 'Pie de página 1',
@@ -17,7 +18,7 @@ const MyCarousel = () => {
     {
       title: 'Telo 2',
       imageUri: 'URL_DE_LA_IMAGEN_2',
-      title:'titulo',
+      title: 'titulo',
       label: 'Etiqueta 2',
       description: 'Descripción del segundo elemento del carrusel.',
       footer: 'Pie de página 2',
@@ -25,24 +26,24 @@ const MyCarousel = () => {
     {
       title: 'Telo 3',
       imageUri: 'URL_DE_LA_IMAGEN_3',
-      title:'titulo',
+      title: 'titulo',
       label: 'Etiqueta 3',
       description: 'Descripción del tercer elemento del carrusel.',
       footer: 'Pie de página 3',
     },
     // Agrega más objetos para más elementos del carrusel
   ];
-  
+
   const renderItem = ({ item, index }) => {
     return (
-      <View>
-        <Card2
-        heading={item.heading}
-        imageUri={item.imageUri}
-        title={item.title}
-        label={item.label}
-        description={item.description}
-        footer={item.footer}
+      <View style={styles.slide}>
+        <CardRecientes
+          heading={item.heading}
+          imageUri={item.imageUri}
+          title={item.title}
+          label={item.label}
+          description={item.description}
+          footer={item.footer}
         />
       </View>
     );
@@ -53,8 +54,10 @@ const MyCarousel = () => {
     <Carousel
       data={data}
       renderItem={renderItem}
-      sliderWidth={300}
-      itemWidth={200}
+      loop={true}
+      layout={'default'}
+      sliderWidth={Dimensions.get('window').width}
+      itemWidth={340}
     />
   );
 };
@@ -64,10 +67,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'lightblue',
     borderRadius: 5,
     height: 200,
-    padding: 20,
+    padding: 10,
     marginLeft: 25,
     marginRight: 25,
+  },
+  slide: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
 export default MyCarousel;
+
