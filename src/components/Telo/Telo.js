@@ -1,6 +1,7 @@
 import React from "react";
-import { Text, ScrollView } from "react-native";
+import { Text, ScrollView, StyleSheet } from "react-native";
 import Constants from "expo-constants";
+import CarouselTelo from "../Carousel/CarouselTelo";
 
 const Telo = () => {
   return (
@@ -9,11 +10,15 @@ const Telo = () => {
         // marginTop: Constants.statusBarHeight,
         backgroundColor: "#f0f0f0",
       }}
-      contentContainerStyle={{ flexGrow: 1 }}
     >
-      <Text>Hola</Text>
+      <CarouselTelo />
     </ScrollView>
   );
 };
 
 export default Telo;
+
+
+const styles = StyleSheet.create({
+
+})
