@@ -1,13 +1,14 @@
 import React from 'react'
+import { TouchableOpacity } from 'react-native';
 import { View, Text, StyleSheet, Image } from "react-native";
 
 export const CardRecientes = () => {
   return (
-      <View style={[styles.card, styles.cardElevated]}>
+    <View style={[styles.card, styles.cardElevated]}>
         <Image source={{ uri: 'https://elcomercio.pe/resizer/SgYtnAzluKyPeVdqdW-pWI1_4n4=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/KH4UYLZFOBFTTCGJBWADDJ4VEI.jpg' }}
           style={styles.cardImage}></Image>
         <View style={styles.cardBody}>
-          <Text style={styles.cardTitle }>Telo Pingo</Text>
+          <Text style={styles.cardTitle}>Telo Pingo</Text>
           <View style={styles.cardfooter}>
             <View style={styles.cardCalificacionCont}>
               <Text style={styles.cardCalificacion}> 5,2 ⭐</Text>
@@ -15,12 +16,7 @@ export const CardRecientes = () => {
             <Text style={styles.cardUbicacion}> aca a la vuelta</Text>
           </View>
         </View>
-        {/* <TouchableOpacity>
-  <View style={styles.cardContent}>
-  <Text>hola</Text>
-  </View>
-</TouchableOpacity> */}
-      </View>
+    </View>
   )
 }
 
@@ -60,7 +56,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.3)", 
+    backgroundColor: "rgba(0, 0, 0, 0.3)",
     padding: 10,
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
