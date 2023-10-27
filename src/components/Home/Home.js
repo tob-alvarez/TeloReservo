@@ -39,6 +39,7 @@ const Home = () => {
       >
         <View
           style={{
+            marginTop: Constants.statusBarHeight,
             backgroundColor: "#tranparent",
             alignItems: "center",
           }}
@@ -52,15 +53,15 @@ const Home = () => {
           <View>
             <Text style={{ color: "grey", fontSize: 8, marginBottom: 5 }}>Ubicación</Text>
             <Pressable
-            style={styles.input}
-            placeholder="Buscar..."
-            onPress={() => {
-              navigate("Mapa");
-            }}
-          >
-            <Text style={{ color: "grey" }}>Ej: San Miguel de Tucumán</Text>
-          </Pressable>
-          
+              style={styles.input}
+              placeholder="Buscar..."
+              onPress={() => {
+                navigate("Mapa");
+              }}
+            >
+              <Text style={{ color: "grey" }}>Ej: San Miguel de Tucumán</Text>
+            </Pressable>
+
           </View>
           <Text style={styles.separador}></Text>
           <Pressable
@@ -73,12 +74,9 @@ const Home = () => {
             <Text>Buscar</Text>
           </Pressable>
         </View>
-        <View style={{ marginTop:20, height: 200, justifyContent: "start" }}>
-            <Text style={{ marginStart: 20, fontSize:12, color:"rgb(100, 100, 100)" }}>V I S T O S    R E C I E N T E M E N T E</Text>
-            <MyCarousel />
-          </View>
-        <View style={styles.centeredView}>
-          
+        <View style={{ marginTop: 20, height: 200, justifyContent: "start" }}>
+          <Text style={{ marginStart: 20, fontSize: 12, color: "rgb(100, 100, 100)" }}>V I S T O S    R E C I E N T E M E N T E</Text>
+          <MyCarousel />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -98,9 +96,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     padding: 10,
-    paddingTop:1,
-    paddingLeft:15,
-    paddingRight:15,
+    paddingTop: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
     borderColor: "transparent",
     backgroundColor: "#fff",
     margin: 10,

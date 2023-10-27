@@ -11,6 +11,7 @@ import {
     Pressable,
     TouchableOpacity
 } from "react-native";
+import CardTeloBusqueda from "../Cards/CardTeloBusqueda";
 
 const ListaTelos = () => {
     const navigate = useNavigation();
@@ -51,6 +52,7 @@ const ListaTelos = () => {
             </View>
             <View>
                 <Text>Lista de Cards de Telos registrados aqui</Text>
+                <CardTeloBusqueda/>
             </View>
         </ScrollView>
     );

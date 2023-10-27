@@ -99,6 +99,8 @@ function StackFavoritos() {
         component={Telo}
         options={{
           // headerShown: false,
+          headerTitle: "Nombre Telo",
+          headerTitleAlign: "center",
         }}
       />
     </FavoritosStackNav.Navigator>

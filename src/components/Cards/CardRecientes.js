@@ -5,17 +5,17 @@ import { View, Text, StyleSheet, Image } from "react-native";
 export const CardRecientes = () => {
   return (
     <View style={[styles.card, styles.cardElevated]}>
-        <Image source={{ uri: 'https://elcomercio.pe/resizer/SgYtnAzluKyPeVdqdW-pWI1_4n4=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/KH4UYLZFOBFTTCGJBWADDJ4VEI.jpg' }}
-          style={styles.cardImage}></Image>
-        <View style={styles.cardBody}>
-          <Text style={styles.cardTitle}>Telo Pingo</Text>
-          <View style={styles.cardfooter}>
-            <View style={styles.cardCalificacionCont}>
-              <Text style={styles.cardCalificacion}> 5,2 ⭐</Text>
-            </View>
-            <Text style={styles.cardUbicacion}> aca a la vuelta</Text>
+      <Image source={{ uri: 'https://elcomercio.pe/resizer/SgYtnAzluKyPeVdqdW-pWI1_4n4=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/KH4UYLZFOBFTTCGJBWADDJ4VEI.jpg' }}
+        style={styles.cardImage}></Image>
+      <View style={styles.cardBody}>
+        <Text style={styles.cardTitle}>Telo Pingo</Text>
+        <View style={styles.cardfooter}>
+          <View style={styles.cardCalificacionCont}>
+            <Text style={styles.cardCalificacion}> 5,2 ⭐</Text>
           </View>
+          <Text style={styles.cardUbicacion}> aca a la vuelta</Text>
         </View>
+      </View>
     </View>
   )
 }
