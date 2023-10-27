@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
+import Carousel, { ParallaxImage, Pagination } from 'react-native-snap-carousel';
 import {
     View,
     Text,
@@ -28,17 +28,23 @@ const ENTRIES1 = [
 ];
 const { width: screenWidth } = Dimensions.get('window');
 
-const MyCarousel = props => {
+
+const CarouselTelo = props => {
     const [entries, setEntries] = useState([]);
+    const [activeSlide, setActiveSlide] = useState(0); // Nuevo estado para el slide activo
     const carouselRef = useRef(null);
 
-    const goForward = () => {
-        carouselRef.current.snapToNext();
-    };
+    // const goForward = () => {
+    //     carouselRef.current.snapToNext();
+    // };
 
     useEffect(() => {
         setEntries(ENTRIES1);
     }, []);
+
+    const onSnapToItem = index => {
+        setActiveSlide(index); // Actualiza el estado del slide activo
+    };
 
     const renderItem = ({ item, index }, parallaxProps) => {
         return (
@@ -54,25 +60,35 @@ const MyCarousel = props => {
         );
     };
 
+
+
+
     return (
         <View style={styles.container}>
-            {/* <TouchableOpacity onPress={goForward}>
-                <Text>go to next slide</Text>
-            </TouchableOpacity> */}
             <Carousel
                 ref={carouselRef}
                 sliderWidth={screenWidth}
                 sliderHeight={screenWidth}
-                itemWidth={screenWidth - 60}
+                itemWidth={screenWidth}
                 data={entries}
                 renderItem={renderItem}
                 hasParallaxImages={true}
+                onSnapToItem={onSnapToItem}
             />
+            <Pagination
+                dotsLength={ENTRIES1.length}
+                activeDotIndex={activeSlide}
+                containerStyle={styles.paginationContainer}
+                dotContainerStyle={styles.paginationDot}
+            />
+            {/* <TouchableOpacity onPress={goForward}>
+                    <Text>go to next slide</Text>
+                </TouchableOpacity> */}
         </View>
     );
 };
 
-export default MyCarousel;
+export default CarouselTelo;
 
 const styles = StyleSheet.create({
     container: {
@@ -80,15 +96,28 @@ const styles = StyleSheet.create({
     },
     item: {
         width: '100%',
-        height: screenWidth,
+        height: 300,
     },
     imageContainer: {
-        flex: 1,
         marginBottom: Platform.select({ ios: 0, android: 1 }), // Prevent a random Android rendering issue
         backgroundColor: 'white',
+        height: 300,
+        width: '100%',
     },
     image: {
-        ...StyleSheet.absoluteFillObject,
         resizeMode: 'cover',
+    },
+    paginationContainer: {
+        flexDirection: 'row',
+        position: 'absolute',
+        bottom: 0,
+        alignSelf: 'center',
+    },
+    paginationDot: {
+        width: 10,
+        height: 10,
+        borderRadius: 4,
+        marginHorizontal: 4,
+        backgroundColor: '#fff',
     },
 });

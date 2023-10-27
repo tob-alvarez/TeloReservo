@@ -78,9 +78,6 @@ const Home = () => {
           <Text style={{ marginStart: 20, fontSize: 12, color: "rgb(100, 100, 100)" }}>V I S T O S    R E C I E N T E M E N T E</Text>
           <MyCarousel />
         </View>
-        <View style={styles.centeredView}>
-
-        </View>
       </ScrollView>
     </SafeAreaView>
   );

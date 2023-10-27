@@ -63,14 +63,13 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     marginVertical: 12,
     marginHorizontal: 16,
-    borderWidth: 1,
     borderColor: "#ccccc",
     justifyContent: "center",
     alignItems: "start",
   },
   cardElevated: {
     backgroundColor: "#fff",
-    elevation: 3,
+    elevation: 5,
     shadowOffset: {
       width: 1,
       height: 1,
