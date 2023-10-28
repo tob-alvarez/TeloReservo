@@ -1,22 +1,49 @@
-import React from 'react'
+import { Entypo, Ionicons } from '@expo/vector-icons';
+import React, { useState } from 'react'
 import { TouchableOpacity } from 'react-native';
 import { View, Text, StyleSheet, Image } from "react-native";
 
 const CardTeloBusqueda = () => {
+  const [fav, setFav] = useState(true);
+
+  handleFav = () => {
+    setFav(!fav);
+  };
+
   return (
-  <View style={[styles.card, styles.cardElevated]}>
-    <Image source={{ uri: 'https://elcomercio.pe/resizer/SgYtnAzluKyPeVdqdW-pWI1_4n4=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/KH4UYLZFOBFTTCGJBWADDJ4VEI.jpg' }}
-      style={styles.cardImage}></Image>
-    <View style={styles.cardBody}>
-      <Text style={styles.cardTitle}>Telo Pingo</Text>
-      <View style={styles.cardfooter}>
-        <View style={styles.cardCalificacionCont}>
-          <Text style={styles.cardCalificacion}> 5,2 ⭐</Text>
+    <View style={[styles.card, styles.cardElevated]}>
+      <View style={{ position: "relative" }}>
+
+        <Image source={{ uri: 'https://elcomercio.pe/resizer/SgYtnAzluKyPeVdqdW-pWI1_4n4=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/KH4UYLZFOBFTTCGJBWADDJ4VEI.jpg' }}
+          style={styles.cardImage}></Image>
+        <View style={styles.botonFav}>
+          <TouchableOpacity style={styles.corazon} onPress={handleFav}>
+            <Ionicons
+              name={fav ? "ios-heart-sharp" : "ios-heart-outline"}
+              size={30}
+              color={fav ? "red" : "white"}
+            />
+          </TouchableOpacity>
         </View>
-        <Text style={styles.cardUbicacion}> aca a la vuelta</Text>
+      </View>
+      <View style={styles.cardBody}>
+        <Text style={styles.cardTitle}>Telo Pingo</Text>
+        <View style={styles.cardfooter}>
+          <View style={styles.cardCalificacionCont}>
+            <Text style={styles.cardCalificacion}> 5,2 ⭐</Text>
+          </View>
+          <Text style={styles.cardUbicacion}> <Ionicons name="location-sharp" size={15} color="black" /> A 1,2 km de distancia</Text>
+        </View>
+        <Text style={styles.separador}></Text>
+        <View style={{flexDirection:"row"}}>
+
+          <Text style={styles.cardPrecio}> $4.800 </Text>
+          <Text style={{fontSize:15, top:15, color: "rgba(60, 180, 0, 1)"}}> ARS </Text>
+        </View>
+        <Text style={styles.cardVerMas}> Ver más...</Text>
+
       </View>
     </View>
-  </View>
   )
 };
 
@@ -29,7 +56,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 12,
     marginHorizontal: 20,
-    position: "relative",
   },
 
   cardElevated: {
@@ -47,32 +73,43 @@ const styles = StyleSheet.create({
     objectFit: "cover",
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    borderBottomRightRadius: 10,
-    borderBottomLeftRadius: 10,
+
+  },
+  corazon: {
+    width: 45,
+    height: 45,
+    position: "absolute",
+    bottom: 68,
+    left: "86%",
+    backgroundColor: "rgba(0, 10, 0, 0.7)",
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center"
 
   },
   cardBody: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.3)",
-    padding: 10,
+    height: "120%",
+    backgroundColor: "white",
+    paddingLeft: 10,
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
   },
 
   cardTitle: {
-    color: "#ffffff",
-    fontSize: 15,
+    color: "#000000",
+    fontSize: 20,
     fontWeight: "bold",
   },
 
+  cardfooter: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingTop: 5,
+  },
   cardUbicacion: {
-    color: "#ffffff",
+    color: "#000000",
     fontSize: 12,
   },
-
 
   cardCalificacion: {
     color: "#ffffff",
@@ -81,16 +118,31 @@ const styles = StyleSheet.create({
 
   cardCalificacionCont: {
     borderRadius: 8,
-    backgroundColor: "rgba(0, 1000, 0, 0.6)", // Fondo semitransparente para el texto
+    backgroundColor: "rgba(60, 180, 0, 1)",
     height: 22,
     justifyContent: "center",
     marginEnd: 5,
   },
+  separador: {
+    marginTop: 10,
+    borderTopWidth: 1,
+    borderColor: "#ccc",
+    width: "95%",
+    height: 1,
+  },
+  cardPrecio: {
+    paddingTop: 5,
+    fontSize: 25,
+    color: "rgba(60, 180, 0, 1)",
+  },
+  cardVerMas: {
+    position: "absolute",
+    bottom: "10%",
+    left: "80%",
+    color: "#000000",
+    fontSize: 12,
+  },
 
-  cardfooter: {
-    flexDirection: "row",
-    alignItems: "center",
-  }
   // cardContent: {
   //   marginHorizontal: 18,
   //   marginVertical: 10,
