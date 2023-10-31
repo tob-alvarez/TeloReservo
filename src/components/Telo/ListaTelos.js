@@ -9,7 +9,8 @@ import {
     ScrollView,
     StyleSheet,
     Pressable,
-    TouchableOpacity
+    TouchableOpacity,
+    TextInput
 } from "react-native";
 import CardTeloBusqueda from "../Cards/CardTeloBusqueda";
 
@@ -18,20 +19,19 @@ const ListaTelos = () => {
 
 
     return (
-        <ScrollView
+        <View
             style={{
                 backgroundColor: "#f0f0f0",
                 marginTop: Constants.statusBarHeight,
+                flex: 1,
             }}
-            contentContainerStyle={{ flexGrow: 1 }}
         >
             <View style={styles.searchContainer}>
-                <Pressable
+                <TextInput
                     style={styles.input}
-                    placeholder="Buscar..."
+                    placeholder="Ej: San Miguel de Tucumán"
                 >
-                    <Text style={{ color: "grey" }}>Ej: San Miguel de Tucumán</Text>
-                </Pressable>
+                </TextInput>
                 <Text style={styles.separador}></Text>
                 <View style={styles.filters}>
                     <TouchableOpacity
@@ -50,11 +50,14 @@ const ListaTelos = () => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <View>
-                <Text>Lista de Cards de Telos registrados aqui</Text>
-                <CardTeloBusqueda/>
-            </View>
-        </ScrollView>
+            <ScrollView style={styles.container} contentContainerStyle={{ flexGrow: 1 }}>
+                <CardTeloBusqueda />
+                <CardTeloBusqueda />
+                <CardTeloBusqueda />
+                <CardTeloBusqueda />
+                <CardTeloBusqueda />
+            </ScrollView>
+        </View>
     );
 };
 
@@ -74,7 +77,7 @@ const styles = StyleSheet.create({
         borderColor: "transparent",
         backgroundColor: "#fff",
         margin: 10,
-        height: "25%",
+        height: 160,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
