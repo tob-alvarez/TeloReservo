@@ -5,9 +5,11 @@ import CarouselTelo from "../Carousel/CarouselTelo";
 import { Ionicons } from "@expo/vector-icons";
 import { FontAwesome5 } from '@expo/vector-icons';
 import MapView, { Marker } from "react-native-maps"
+import { useNavigation } from "@react-navigation/native";
 
 const Telo = () => {
 
+  const { navigate } = useNavigation();
   const mapRef = React.useRef(null);
 
   const [origin, setOrigin] = React.useState({
@@ -43,7 +45,9 @@ const Telo = () => {
       </View>
       <View>
         <Text style={styles.subtitlos}>COMODIDADES</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          navigate("Comodidades");
+        }}>
           <View style={styles.comodidades}>
             <View style={styles.comodidadesIconos}>
               <Ionicons name="wifi" size={40} color="black" />

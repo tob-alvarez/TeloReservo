@@ -15,6 +15,7 @@ import Maps from "../Maps/Maps";
 //screenFavorites
 import Favoritos from "../Favoritos/Favoritos";
 import Telo from "../Telo/Telo";
+import Comodidades from "../Telo/Comodidades";
 //screenConfiguration
 import Configuracion from "../Configuracion/Configuracion";
 
@@ -82,6 +83,10 @@ function StackHome() {
 
 function StackFavoritos() {
 
+  const navigate = useNavigation();
+  const handleBack = () => {
+    navigate.goBack();
+  }
 
   return (
     <FavoritosStackNav.Navigator initialRoute="FavoritosHome">
@@ -101,6 +106,14 @@ function StackFavoritos() {
           // headerShown: false,
           headerTitle: "Nombre Telo",
           headerTitleAlign: "center",
+        }}
+      />
+      <FavoritosStackNav.Screen
+        name="Comodidades"
+        component={Comodidades}
+        options={{
+          presentation: "modal",
+
         }}
       />
     </FavoritosStackNav.Navigator>
@@ -140,6 +153,7 @@ function TabGroup() {
         },
         tabBarInactiveTintColor: "gray",
         tabBarActiveTintColor: "black",
+        tabBarStyle: { height: 65, paddingBottom: 10 }
       })}
     >
       <Tab.Screen

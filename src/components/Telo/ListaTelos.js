@@ -8,7 +8,6 @@ import {
     View,
     ScrollView,
     StyleSheet,
-    Pressable,
     TouchableOpacity,
     TextInput
 } from "react-native";
