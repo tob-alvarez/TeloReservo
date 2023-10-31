@@ -115,56 +115,57 @@ function TabGroup() {
           if (route.name === "Home") {
             return (
               <Ionicons
-                name={focused ? "ios-bed" : "ios-bed-outline"}
-                size={size}
+              name={focused ? "ios-bed" : "ios-bed-outline"}
+              size={size}
                 color={color}
-              />
-            );
+                />
+                );
           } else if (route.name === "Configuración") {
             return (
               <Ionicons
-                name={focused ? "ios-settings" : "ios-settings-outline"}
-                size={size}
-                color={color}
+              name={focused ? "ios-settings" : "ios-settings-outline"}
+              size={size}
+              color={color}
               />
-            );
-          } else if (route.name === "Favoritos") {
-            return (
-              <Ionicons
+              );
+            } else if (route.name === "Favoritos") {
+              return (
+                <Ionicons
                 name={focused ? "ios-heart-sharp" : "ios-heart-outline"}
                 size={size}
                 color={color}
-              />
-            );
-          }
+                />
+                );
+              }
         },
         tabBarInactiveTintColor: "gray",
         tabBarActiveTintColor: "black",
+        tabBarStyle:{height:70, paddingBottom:20}
       })}
-    >
+      >
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
           headerShown: false,
         }}
-      // options={{ tabBarBadge: 3 }}
-      // esta opcion es para poner notificaciones
-      />
+        // options={{ tabBarBadge: 3 }}
+        // esta opcion es para poner notificaciones
+        />
       <Tab.Screen
         name="Favoritos"
         component={StackFavoritos}
         options={{
           headerShown: false,
         }}
-      />
+        />
       <Tab.Screen
         name="Configuración"
         component={Configuracion}
         options={{
           headerShown: false,
         }}
-      />
+        />
     </Tab.Navigator>
   );
 }
@@ -173,12 +174,12 @@ const Tab = createBottomTabNavigator();
 
 const Layout = ({ children }) => {
   return (
-    <View style={styles.container}>
-      <View>{children}</View>
+    <View style={styles.container} >
+      <View >{children}</View>
       <NavigationContainer
       // theme={DarkTheme}
       >
-        <StackHome />
+        <StackHome  />
       </NavigationContainer>
     </View>
   );

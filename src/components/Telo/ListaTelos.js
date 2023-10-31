@@ -22,6 +22,7 @@ const ListaTelos = () => {
             style={{
                 backgroundColor: "#f0f0f0",
                 marginTop: Constants.statusBarHeight,
+                
             }}
             contentContainerStyle={{ flexGrow: 1 }}
         >
@@ -50,10 +51,14 @@ const ListaTelos = () => {
                     </TouchableOpacity>
                 </View>
             </View>
-            <View>
-                <Text>Lista de Cards de Telos registrados aqui</Text>
-                <CardTeloBusqueda/>
-            </View>
+            <ScrollView style={{backgroundColor:"gray"}}>
+<View style={{height:1000, backgroundColor:"green"}}> 
+    
+<CardTeloBusqueda />
+<CardTeloBusqueda />
+</View>
+            </ScrollView>
+
         </ScrollView>
     );
 };
@@ -108,5 +113,6 @@ const styles = StyleSheet.create({
         justifyContent: "space-between",
         alignItems: "center",
         width: "30%"
-    }
+    },
+    
 });

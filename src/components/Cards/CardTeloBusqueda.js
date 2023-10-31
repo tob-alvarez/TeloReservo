@@ -11,6 +11,8 @@ const CardTeloBusqueda = () => {
   };
 
   return (
+    <View style={{backgroundColor:"red", height:"100%"}}> 
+
     <View style={[styles.card, styles.cardElevated]}>
       <View style={{ position: "relative" }}>
 
@@ -22,7 +24,7 @@ const CardTeloBusqueda = () => {
               name={fav ? "ios-heart-sharp" : "ios-heart-outline"}
               size={30}
               color={fav ? "red" : "white"}
-            />
+              />
           </TouchableOpacity>
         </View>
       </View>
@@ -44,6 +46,7 @@ const CardTeloBusqueda = () => {
 
       </View>
     </View>
+              </View>
   )
 };
 
