@@ -22,23 +22,23 @@ const CardTeloBusqueda = () => {
               <Ionicons
                 name={fav ? "ios-heart-sharp" : "ios-heart-outline"}
                 size={30}
-                color={fav ? "red" : "white"}
+                color={fav ? "#f48aa0" : "white"}
               />
             </TouchableOpacity>
           </View>
         </View>
         <View style={styles.cardBody}>
-          <Text style={styles.cardTitle}>Telo Pingo</Text>
+          <Text style={styles.cardTitle}>Telo 1</Text>
           <View style={styles.cardfooter}>
             <View style={styles.cardCalificacionCont}>
               <Text style={styles.cardCalificacion}> 5,2 ⭐</Text>
             </View>
-            <Text style={styles.cardUbicacion}> <Ionicons name="location-sharp" size={15} color="black" /> A 1,2 km de distancia</Text>
+            <Text style={styles.cardUbicacion}> <Ionicons name="location-sharp" size={15} color="#f48aa0" /> A 1,2 km de distancia</Text>
           </View>
           <Text style={styles.separador}></Text>
           <View style={{ flexDirection: "row" }}>
             <Text style={styles.cardPrecio}> $4.800 </Text>
-            <Text style={{ fontSize: 15, top: 15, color: "rgba(60, 180, 0, 1)" }}> ARS </Text>
+            <Text style={{ fontSize: 15, top: 15, color: "#f48aa0" }}> ARS </Text>
           </View>
           <Text style={styles.cardVerMas}> Ver más...</Text>
         </View>
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
 
   cardCalificacionCont: {
     borderRadius: 8,
-    backgroundColor: "rgba(60, 180, 0, 1)",
+    backgroundColor: "green",
     height: 22,
     justifyContent: "center",
     marginEnd: 5,
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   cardPrecio: {
     paddingTop: 5,
     fontSize: 25,
-    color: "rgba(60, 180, 0, 1)",
+    color: "#f48aa0",
   },
   cardVerMas: {
     left: "80%",

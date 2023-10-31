@@ -18,6 +18,9 @@ import Telo from "../Telo/Telo";
 import Comodidades from "../Telo/Comodidades";
 //screenConfiguration
 import Configuracion from "../Configuracion/Configuracion";
+import HabitacionesPrecios from "../Telo/HabitacionesPrecios";
+import Valoraciones from "../Telo/Valoraciones";
+import ContactoTelo from "../Telo/ContactoTelo";
 
 const FavoritosStackNav = createNativeStackNavigator();
 const HomeStackNav = createNativeStackNavigator();
@@ -116,6 +119,30 @@ function StackFavoritos() {
 
         }}
       />
+      <FavoritosStackNav.Screen
+        name="Precios"
+        component={HabitacionesPrecios}
+        options={{
+          presentation: "modal",
+
+        }}
+      />
+      <FavoritosStackNav.Screen
+        name="Valoraciones"
+        component={Valoraciones}
+        options={{
+          presentation: "modal",
+
+        }}
+      />
+      <FavoritosStackNav.Screen
+        name="ContactoTelo"
+        component={ContactoTelo}
+        options={{
+          presentation: "modal",
+          headerTitle: "",
+        }}
+      />
     </FavoritosStackNav.Navigator>
   );
 }
@@ -130,7 +157,7 @@ function TabGroup() {
               <Ionicons
                 name={focused ? "ios-bed" : "ios-bed-outline"}
                 size={size}
-                color={color}
+                color={focused ? '#f48aa0' : "gray"}
               />
             );
           } else if (route.name === "Configuración") {
@@ -138,7 +165,7 @@ function TabGroup() {
               <Ionicons
                 name={focused ? "ios-settings" : "ios-settings-outline"}
                 size={size}
-                color={color}
+                color={focused ? '#f48aa0' : "gray"}
               />
             );
           } else if (route.name === "Favoritos") {
@@ -146,13 +173,13 @@ function TabGroup() {
               <Ionicons
                 name={focused ? "ios-heart-sharp" : "ios-heart-outline"}
                 size={size}
-                color={color}
+                color={focused ? '#f48aa0' : "gray"}
               />
             );
           }
         },
         tabBarInactiveTintColor: "gray",
-        tabBarActiveTintColor: "black",
+        tabBarActiveTintColor: "#f48aa0",
         tabBarStyle: { height: 65, paddingBottom: 10 }
       })}
     >

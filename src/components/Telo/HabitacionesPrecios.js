@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-const Comodidades = () => {
+const HabitacionesPrecios = () => {
 
     const [selected, setSelected] = useState("NuestrasRecomendaciones");
     const navigation = useNavigation();
@@ -52,7 +52,7 @@ const Comodidades = () => {
     );
 };
 
-export default Comodidades;
+export default HabitacionesPrecios;
 
 
 const styles = StyleSheet.create({

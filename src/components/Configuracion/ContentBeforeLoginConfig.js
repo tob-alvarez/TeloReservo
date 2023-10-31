@@ -38,7 +38,7 @@ const ContentBeforeLoginConfig = () => {
           <Text>Notificaciones push</Text>
           <View style={{ flexDirection: "row" }}>
             <Switch
-              trackColor={{ false: "#767577", true: "#FFDDE2" }}
+              trackColor={{ false: "#767577", true: "#f48aa0" }}
               thumbColor={isEnabled ? "#ffffff" : "#ffffff"}
               ios_backgroundColor="#3e3e3e"
               onValueChange={toggleSwitch}
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   BotonRosita: {
-    backgroundColor: "#FFDDE2",
+    backgroundColor: "#f48aa0",
     width: "90%",
     marginHorizontal: 25,
     paddingVertical: 10,
