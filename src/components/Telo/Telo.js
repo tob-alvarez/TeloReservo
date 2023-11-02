@@ -22,68 +22,68 @@ const Telo = () => {
       <View style={styles.contenedorNombreTelo}>
         <Text style={styles.tituloTelo}>Nombre Telo</Text>
         <View style={styles.contenedorEstrellas}>
-          <Ionicons name="star" size={16} color="black" />
-          <Ionicons name="star" size={16} color="black" />
-          <Ionicons name="star" size={16} color="black" />
-          <Ionicons name="star" size={16} color="black" />
-          <Ionicons name="star" size={16} color="black" />
+          <Ionicons name="star" size={20} color="#f48aa0" />
+          <Ionicons name="star" size={20} color="#f48aa0" />
+          <Ionicons name="star" size={20} color="#f48aa0" />
+          <Ionicons name="star" size={20} color="#f48aa0" />
+          <Ionicons name="star" size={20} color="#f48aa0" />
         </View>
       </View>
       <View style={styles.contenedorReservar}>
         <TouchableOpacity style={styles.BotonReservar}>
-          <Text style={{ color: 'white' }}>RESERVÁ AHORA</Text>
+          <Text style={{ color: 'black', fontSize: 20 }}>RESERVÁ AHORA</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.contenedorBotones}>
         <TouchableOpacity
-          style={{ backgroundColor: "#f48aa0", width: '40%', margin: 20, borderRadius: 6, }}
+          style={styles.touchableElevado}
           onPress={() => {
             navigate("Precios");
           }}>
           <View >
             <Text style={styles.botonesModal}>HABITACIONES</Text>
             <View style={styles.comodidades}>
-              <MaterialCommunityIcons name="bed-king" size={50} color="white" />
+              <MaterialCommunityIcons name="bed-king" size={50} color="#f48aa0" />
             </View>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          style={{ backgroundColor: "#f48aa0", width: '40%', margin: 20, borderRadius: 6, }}
+          style={styles.touchableElevado}
           onPress={() => {
             navigate("Comodidades");
           }}>
           <View >
             <Text style={styles.botonesModal}>COMODIDADES</Text>
             <View style={styles.comodidades}>
-              <Ionicons name="wifi" size={30} color="white" />
-              <FontAwesome5 name="parking" size={30} color="white" />
-              <Ionicons name="snow" size={30} color="white" />
+              <Ionicons name="wifi" size={30} color="#f48aa0" />
+              <FontAwesome5 name="parking" size={30} color="#f48aa0" />
+              <Ionicons name="snow" size={30} color="#f48aa0" />
             </View>
           </View>
         </TouchableOpacity>
       </View>
       <View style={styles.contenedorBotones}>
         <TouchableOpacity
-          style={{ backgroundColor: "#f48aa0", width: '40%', margin: 20, borderRadius: 6, }}
+          style={styles.touchableElevado}
           onPress={() => {
             navigate("Valoraciones");
           }}>
           <View >
             <Text style={styles.botonesModal}>VALORACIÓN</Text>
             <View style={styles.comodidades}>
-              <Text style={{ fontSize: 30, color: 'white' }}>7.8</Text>
+              <Text style={{ fontSize: 30, color: '#f48aa0' }}>7.8</Text>
             </View>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          style={{ backgroundColor: "#f48aa0", width: '40%', margin: 20, borderRadius: 6, }}
+          style={styles.touchableElevado}
           onPress={() => {
             navigate("ContactoTelo");
           }}>
           <View >
-            <Text style={styles.botonesModal}>CONTACTO</Text>
+            <Text style={styles.botonesModal}>UBICACIÓN</Text>
             <View style={styles.comodidades}>
-              <Feather name="map-pin" size={30} color="white" />
+              <Feather name="map-pin" size={30} color="#f48aa0" />
             </View>
           </View>
         </TouchableOpacity>
@@ -106,23 +106,37 @@ const styles = StyleSheet.create({
   },
   contenedorEstrellas: {
     flexDirection: "row",
+    gap: 5,
   },
   tituloTelo: {
-    fontWeight: "bold",
-    fontSize: 24,
+    fontSize: 26,
+    color: 'black'
   },
   contenedorBotones: {
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+
   },
   botonesModal: {
     marginHorizontal: 10,
     textAlign: "center",
     marginVertical: 15,
     fontSize: 16,
-    color: "white",
+    color: "black",
+  },
+  touchableElevado: {
+    backgroundColor: "#ffffff",
+    width: '40%',
+    margin: 20,
+    borderRadius: 6,
+    elevation: 5,
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+
   },
   subtitlos: {
     marginStart: 20,
@@ -155,5 +169,10 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: "center",
     justifyContent: "center",
+    elevation: 5,
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
   },
 })

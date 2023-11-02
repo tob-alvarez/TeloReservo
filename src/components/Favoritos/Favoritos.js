@@ -20,6 +20,24 @@ const Favoritos = () => {
       <TouchableOpacity onPress={() => navigation.navigate("Telo")}>
         <CardFav></CardFav>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Telo")}>
+        <CardFav></CardFav>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Telo")}>
+        <CardFav></CardFav>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Telo")}>
+        <CardFav></CardFav>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Telo")}>
+        <CardFav></CardFav>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Telo")}>
+        <CardFav></CardFav>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("Telo")}>
+        <CardFav></CardFav>
+      </TouchableOpacity>
     </ScrollView>
   );
 };

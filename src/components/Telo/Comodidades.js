@@ -1,54 +1,85 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Ionicons, FontAwesome5, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Comodidades = () => {
 
-    const [selected, setSelected] = useState("NuestrasRecomendaciones");
-    const navigation = useNavigation();
-
-    const handleOptionSelect = (option) => {
-        setSelected(option);
-        // navigation.goBack(); // Navega a la página anterior
-        //hay que hacer que tenga un delay minimo y hacer que quede en el contexto
-    }
-
     return (
-        <View>
-            <View style={styles.contenedorOpcion}>
-                <TouchableOpacity onPress={() => handleOptionSelect("NuestrasRecomendaciones")}>
-                    <View style={styles.opcion}>
-                        <Text>Nuestras recomendaciones</Text>
-                        {selected === "NuestrasRecomendaciones" && <Ionicons name="checkmark" size={24} color="black" />}
-                    </View>
-                </TouchableOpacity>
+        <ScrollView>
+            <View style={{ flexDirection: 'row', width: '100%', justifyContent: ' center', alignItems: 'center', }}>
+                <View style={styles.contenedorOpcion}>
+                    <TouchableOpacity>
+                        <View style={styles.opcion}>
+                            <Ionicons name="wifi" size={50} color="#f48aa0" />
+                            <Text>Wi Fi</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.contenedorOpcion}>
+                    <TouchableOpacity>
+                        <View style={styles.opcion}>
+                            <FontAwesome5 name="parking" size={50} color="#f48aa0" />
+                            <Text>Estacionamiento</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
-            <View style={styles.contenedorOpcion}>
-                <TouchableOpacity onPress={() => handleOptionSelect("Rating")}>
-                    <View style={styles.opcion}>
-                        <Text>Rating</Text>
-                        {selected === "Rating" && <Ionicons name="checkmark" size={24} color="black" />}
-                    </View>
-                </TouchableOpacity>
+            <View style={{ flexDirection: 'row', width: '100%', justifyContent: ' center', alignItems: 'center', }}>
+                <View style={styles.contenedorOpcion}>
+                    <TouchableOpacity>
+                        <View style={styles.opcion}>
+                            <Ionicons name="snow" size={50} color="#f48aa0" />
+                            <Text>Pieza climatizada</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.contenedorOpcion}>
+                    <TouchableOpacity>
+                        <View style={styles.opcion}>
+                            <MaterialIcons name="local-bar" size={50} color="#f48aa0" />
+                            <Text>Bar Local</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
-            <View style={styles.contenedorOpcion}>
-                <TouchableOpacity onPress={() => handleOptionSelect("Precio")}>
-                    <View style={styles.opcion}>
-                        <Text>Precio</Text>
-                        {selected === "Precio" && <Ionicons name="checkmark" size={24} color="black" />}
-                    </View>
-                </TouchableOpacity>
+            <View style={{ flexDirection: 'row', width: '100%', justifyContent: ' center', alignItems: 'center', }}>
+                <View style={styles.contenedorOpcion}>
+                    <TouchableOpacity>
+                        <View style={styles.opcion}>
+                            <MaterialCommunityIcons name="pool" size={50} color="#f48aa0" />
+                            <Text>Jacuzzi</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.contenedorOpcion}>
+                    <TouchableOpacity>
+                        <View style={styles.opcion}>
+                            <FontAwesome5 name="bluetooth" size={50} color="#f48aa0" />
+                            <Text>Música</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
-            <View style={styles.contenedorOpcion}>
-                <TouchableOpacity onPress={() => handleOptionSelect("Distancia")}>
-                    <View style={styles.opcion}>
-                        <Text>Distancia</Text>
-                        {selected === "Distancia" && <Ionicons name="checkmark" size={24} color="black" />}
-                    </View>
-                </TouchableOpacity>
+            <View style={{ flexDirection: 'row', width: '100%', justifyContent: ' center', alignItems: 'center', }}>
+                <View style={styles.contenedorOpcion}>
+                    <TouchableOpacity>
+                        <View style={styles.opcion}>
+                            <FontAwesome5 name="tv" size={50} color="#f48aa0" />
+                            <Text>TV</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.contenedorOpcion}>
+                    <TouchableOpacity>
+                        <View style={styles.opcion}>
+                            <MaterialCommunityIcons name="hair-dryer" size={50} color="#f48aa0" />
+                            <Text>Secador de Pelo</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
-        </View>
+        </ScrollView>
+
     );
 };
 
@@ -63,17 +94,19 @@ const styles = StyleSheet.create({
     },
     contenedorOpcion: {
         fontSize: 25,
-        marginHorizontal: 25,
-        borderTopWidth: 1,
+        borderBottomWidth: 1,
         borderColor: "#ccc",
-        height: 80,
+        height: 180,
         borderRadius: 6,
         justifyContent: "center",
+        alignItems: "center",
+        width: '50%',
     },
     opcion: {
         height: 60,
-        flexDirection: "row",
+        flexDirection: "column",
         justifyContent: "space-between",
         alignItems: "center",
+        gap: 10,
     },
 });
