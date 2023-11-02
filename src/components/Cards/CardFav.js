@@ -36,7 +36,7 @@ const CardFav = () => {
                 <Ionicons
                   name={fav ? "ios-heart-sharp" : "ios-heart-outline"}
                   size={30}
-                  color={"red"}
+                  color={"#f48aa0"}
                 />
               </TouchableOpacity>
             </View>

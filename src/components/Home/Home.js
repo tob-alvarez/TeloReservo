@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   BotonRosita: {
-    backgroundColor: "#FFDDE2",
+    backgroundColor: "#f48aa0",
     width: "100%",
     paddingVertical: 10,
     borderRadius: 5,

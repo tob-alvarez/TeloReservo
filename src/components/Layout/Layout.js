@@ -15,8 +15,12 @@ import Maps from "../Maps/Maps";
 //screenFavorites
 import Favoritos from "../Favoritos/Favoritos";
 import Telo from "../Telo/Telo";
+import Comodidades from "../Telo/Comodidades";
 //screenConfiguration
 import Configuracion from "../Configuracion/Configuracion";
+import HabitacionesPrecios from "../Telo/HabitacionesPrecios";
+import Valoraciones from "../Telo/Valoraciones";
+import ContactoTelo from "../Telo/ContactoTelo";
 
 const FavoritosStackNav = createNativeStackNavigator();
 const HomeStackNav = createNativeStackNavigator();
@@ -82,6 +86,10 @@ function StackHome() {
 
 function StackFavoritos() {
 
+  const navigate = useNavigation();
+  const handleBack = () => {
+    navigate.goBack();
+  }
 
   return (
     <FavoritosStackNav.Navigator initialRoute="FavoritosHome">
@@ -103,6 +111,38 @@ function StackFavoritos() {
           headerTitleAlign: "center",
         }}
       />
+      <FavoritosStackNav.Screen
+        name="Comodidades"
+        component={Comodidades}
+        options={{
+          presentation: "modal",
+
+        }}
+      />
+      <FavoritosStackNav.Screen
+        name="Precios"
+        component={HabitacionesPrecios}
+        options={{
+          presentation: "modal",
+
+        }}
+      />
+      <FavoritosStackNav.Screen
+        name="Valoraciones"
+        component={Valoraciones}
+        options={{
+          presentation: "modal",
+
+        }}
+      />
+      <FavoritosStackNav.Screen
+        name="ContactoTelo"
+        component={ContactoTelo}
+        options={{
+          presentation: "modal",
+          headerTitle: "",
+        }}
+      />
     </FavoritosStackNav.Navigator>
   );
 }
@@ -115,17 +155,17 @@ function TabGroup() {
           if (route.name === "Home") {
             return (
               <Ionicons
-              name={focused ? "ios-bed" : "ios-bed-outline"}
-              size={size}
-                color={color}
-                />
-                );
+                name={focused ? "ios-bed" : "ios-bed-outline"}
+                size={size}
+                color={focused ? '#f48aa0' : "gray"}
+              />
+            );
           } else if (route.name === "Configuración") {
             return (
               <Ionicons
-              name={focused ? "ios-settings" : "ios-settings-outline"}
-              size={size}
-              color={color}
+                name={focused ? "ios-settings" : "ios-settings-outline"}
+                size={size}
+                color={focused ? '#f48aa0' : "gray"}
               />
               );
             } else if (route.name === "Favoritos") {
@@ -133,14 +173,14 @@ function TabGroup() {
                 <Ionicons
                 name={focused ? "ios-heart-sharp" : "ios-heart-outline"}
                 size={size}
-                color={color}
-                />
-                );
-              }
+                color={focused ? '#f48aa0' : "gray"}
+              />
+            );
+          }
         },
         tabBarInactiveTintColor: "gray",
-        tabBarActiveTintColor: "black",
-        tabBarStyle:{height:70, paddingBottom:20}
+        tabBarActiveTintColor: "#f48aa0",
+        tabBarStyle: { height: 65, paddingBottom: 10 }
       })}
       >
       <Tab.Screen

@@ -8,7 +8,7 @@ export const CardRecientes = () => {
       <Image source={{ uri: 'https://elcomercio.pe/resizer/SgYtnAzluKyPeVdqdW-pWI1_4n4=/580x330/smart/filters:format(jpeg):quality(75)/arc-anglerfish-arc2-prod-elcomercio.s3.amazonaws.com/public/KH4UYLZFOBFTTCGJBWADDJ4VEI.jpg' }}
         style={styles.cardImage}></Image>
       <View style={styles.cardBody}>
-        <Text style={styles.cardTitle}>Telo Pingo</Text>
+        <Text style={styles.cardTitle}>Telo 1</Text>
         <View style={styles.cardfooter}>
           <View style={styles.cardCalificacionCont}>
             <Text style={styles.cardCalificacion}> 5,2 ⭐</Text>
