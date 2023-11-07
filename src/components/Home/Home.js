@@ -12,7 +12,7 @@ import {
   SafeAreaView,
   Modal,
 } from "react-native";
-import MyCarousel from "../Carousel/Carousel";
+// import MyCarousel from "../Carousel/Carousel";
 
 const Home = () => {
   const { navigate } = useNavigation();
@@ -76,7 +76,7 @@ const Home = () => {
         </View>
         <View style={{ marginTop: 20, height: 200, justifyContent: "start" }}>
           <Text style={{ marginStart: 20, fontSize: 12, color: "rgb(100, 100, 100)" }}>V I S T O S    R E C I E N T E M E N T E</Text>
-          <MyCarousel />
+          {/* <MyCarousel /> */}
         </View>
       </ScrollView>
     </SafeAreaView>

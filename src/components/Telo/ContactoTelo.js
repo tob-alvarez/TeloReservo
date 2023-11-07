@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
         marginVertical: 20,
         fontSize: 16,
         color: "#454545",
+        fontWeight: "bold",
     },
     containerMap: {
         height: 300,

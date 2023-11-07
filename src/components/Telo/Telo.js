@@ -18,7 +18,7 @@ const Telo = () => {
         backgroundColor: "#f0f0f0",
       }}
     >
-      <CarouselTelo />
+      {/* <CarouselTelo /> */}
       <View style={styles.contenedorNombreTelo}>
         <Text style={styles.tituloTelo}>Nombre Telo</Text>
         <View style={styles.contenedorEstrellas}>

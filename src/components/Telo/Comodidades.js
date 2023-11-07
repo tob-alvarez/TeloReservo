@@ -78,6 +78,24 @@ const Comodidades = () => {
                     </TouchableOpacity>
                 </View>
             </View>
+            <View style={{ flexDirection: 'row', width: '100%', justifyContent: ' center', alignItems: 'center', }}>
+                <View style={styles.contenedorOpcion}>
+                    <TouchableOpacity>
+                        <View style={styles.opcion}>
+                            <MaterialCommunityIcons name="dance-pole" size={50} color="#f48aa0" />
+                            <Text>Caño de Baile</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.contenedorOpcion}>
+                    <TouchableOpacity>
+                        <View style={styles.opcion}>
+                            <FontAwesome5 name="couch" size={50} color="#f48aa0" />
+                            <Text>Sillones/Tantra</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+            </View>
         </ScrollView>
 
     );

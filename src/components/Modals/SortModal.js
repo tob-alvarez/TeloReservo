@@ -20,7 +20,7 @@ const SortModal = () => {
                 <TouchableOpacity onPress={() => handleOptionSelect("NuestrasRecomendaciones")}>
                     <View style={styles.opcion}>
                         <Text>Nuestras recomendaciones</Text>
-                        {selected === "NuestrasRecomendaciones" && <Ionicons name="checkmark" size={24} color="black" />}
+                        {selected === "NuestrasRecomendaciones" && <Ionicons name="checkmark" size={24} color="#f48aa0" />}
                     </View>
                 </TouchableOpacity>
             </View>
@@ -28,7 +28,7 @@ const SortModal = () => {
                 <TouchableOpacity onPress={() => handleOptionSelect("Rating")}>
                     <View style={styles.opcion}>
                         <Text>Rating</Text>
-                        {selected === "Rating" && <Ionicons name="checkmark" size={24} color="black" />}
+                        {selected === "Rating" && <Ionicons name="checkmark" size={24} color="#f48aa0" />}
                     </View>
                 </TouchableOpacity>
             </View>
@@ -36,7 +36,7 @@ const SortModal = () => {
                 <TouchableOpacity onPress={() => handleOptionSelect("Precio")}>
                     <View style={styles.opcion}>
                         <Text>Precio</Text>
-                        {selected === "Precio" && <Ionicons name="checkmark" size={24} color="black" />}
+                        {selected === "Precio" && <Ionicons name="checkmark" size={24} color="#f48aa0" />}
                     </View>
                 </TouchableOpacity>
             </View>
@@ -44,7 +44,7 @@ const SortModal = () => {
                 <TouchableOpacity onPress={() => handleOptionSelect("Distancia")}>
                     <View style={styles.opcion}>
                         <Text>Distancia</Text>
-                        {selected === "Distancia" && <Ionicons name="checkmark" size={24} color="black" />}
+                        {selected === "Distancia" && <Ionicons name="checkmark" size={24} color="#f48aa0" />}
                     </View>
                 </TouchableOpacity>
             </View>
