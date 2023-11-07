@@ -1,50 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 const HabitacionesPrecios = () => {
 
-    const [selected, setSelected] = useState("NuestrasRecomendaciones");
     const navigation = useNavigation();
 
-    const handleOptionSelect = (option) => {
-        setSelected(option);
-        // navigation.goBack(); // Navega a la página anterior
-        //hay que hacer que tenga un delay minimo y hacer que quede en el contexto
-    }
 
     return (
         <View>
             <View style={styles.contenedorOpcion}>
-                <TouchableOpacity onPress={() => handleOptionSelect("NuestrasRecomendaciones")}>
+                <TouchableOpacity>
                     <View style={styles.opcion}>
-                        <Text>Nuestras recomendaciones</Text>
-                        {selected === "NuestrasRecomendaciones" && <Ionicons name="checkmark" size={24} color="black" />}
+                        <MaterialIcons name="king-bed" size={50} color="#f48aa0" />
+                        <Text>Habitación Premium</Text>
+                        <Text style={{ fontWeight: 'bold' }}>$9999 x 2hs</Text>
+                    </View>
+
+                </TouchableOpacity>
+            </View>
+            <View style={styles.contenedorOpcion}>
+                <TouchableOpacity>
+                    <View style={styles.opcion}>
+                        <MaterialCommunityIcons name="bed-queen" size={50} color="#f48aa0" />
+                        <Text>Habitación Semi Premium</Text>
+                        <Text style={{ fontWeight: 'bold' }}>$9999 x 2hs</Text>
                     </View>
                 </TouchableOpacity>
             </View>
             <View style={styles.contenedorOpcion}>
-                <TouchableOpacity onPress={() => handleOptionSelect("Rating")}>
+                <TouchableOpacity>
                     <View style={styles.opcion}>
-                        <Text>Rating</Text>
-                        {selected === "Rating" && <Ionicons name="checkmark" size={24} color="black" />}
-                    </View>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.contenedorOpcion}>
-                <TouchableOpacity onPress={() => handleOptionSelect("Precio")}>
-                    <View style={styles.opcion}>
-                        <Text>Precio</Text>
-                        {selected === "Precio" && <Ionicons name="checkmark" size={24} color="black" />}
-                    </View>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.contenedorOpcion}>
-                <TouchableOpacity onPress={() => handleOptionSelect("Distancia")}>
-                    <View style={styles.opcion}>
-                        <Text>Distancia</Text>
-                        {selected === "Distancia" && <Ionicons name="checkmark" size={24} color="black" />}
+                        <MaterialCommunityIcons name="bed-single" size={50} color="#f48aa0" />
+                        <Text>Habitación Común</Text>
+                        <Text style={{ fontWeight: 'bold' }}>$9999 x 2hs</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -64,16 +54,16 @@ const styles = StyleSheet.create({
     contenedorOpcion: {
         fontSize: 25,
         marginHorizontal: 25,
-        borderTopWidth: 1,
+        borderBottomWidth: 1,
         borderColor: "#ccc",
-        height: 80,
+        height: 200,
         borderRadius: 6,
         justifyContent: "center",
     },
     opcion: {
-        height: 60,
-        flexDirection: "row",
-        justifyContent: "space-between",
+        height: '100%',
+        justifyContent: "center",
+        gap: 5,
         alignItems: "center",
     },
 });

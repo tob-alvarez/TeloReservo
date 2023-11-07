@@ -31,27 +31,6 @@ const Valoraciones = () => {
                             <Text>8.0</Text>
                         </View>
                     </View>
-                    <Text style={{
-                        marginStart: 20,
-                        fontSize: 15,
-                        marginBottom: 20,
-                        fontWeight: 'bold',
-                        marginTop: 20
-                    }}
-                    >
-                        OPINIONES
-                    </Text>
-                    <Text style={{
-                        marginStart: 20,
-                        fontSize: 13,
-                        marginBottom: 20,
-                        fontWeight: 'bold',
-                        marginTop: 10
-                    }}
-                    >
-                        El wifi anda muy bien cerca de la entrada pero en la habitacion no.
-                    </Text>
-
                 </View>
             </TouchableOpacity>
         </View>
