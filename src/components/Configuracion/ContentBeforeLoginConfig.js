@@ -1,16 +1,25 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View, Switch } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import Constants from "expo-constants";
 
 const ContentBeforeLoginConfig = () => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
+  const { navigate } = useNavigation();
+
   return (
-    <View>
+    <View style={{
+      marginTop: Constants.statusBarHeight,
+    }}>
       <Text style={styles.titulo}>Cuenta</Text>
       <View style={styles.contenedorBoton}>
-        <TouchableOpacity style={styles.BotonRosita}>
+        <TouchableOpacity style={styles.BotonRosita}
+          onPress={() => {
+            navigate("Log-in");
+          }}>
           <Text>Ingresá o creá una cuenta</Text>
         </TouchableOpacity>
       </View>

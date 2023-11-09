@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   BotonRosita: {
-    backgroundColor: "#FFDDE2",
-    width: 250,
+    backgroundColor: "#f48aa0",
+    width: '100%',
     paddingVertical: 10,
     borderRadius: 5,
     alignItems: "center",

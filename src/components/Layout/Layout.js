@@ -17,13 +17,17 @@ import Favoritos from "../Favoritos/Favoritos";
 import Telo from "../Telo/Telo";
 import Comodidades from "../Telo/Comodidades";
 //screenConfiguration
-import Configuracion from "../Configuracion/Configuracion";
+import Login from "../Configuracion/Login";
+import Registro from "../Configuracion/Registro";
+import ContentBeforeLoginConfig from "../Configuracion/ContentBeforeLoginConfig";
+//screensTelo
 import HabitacionesPrecios from "../Telo/HabitacionesPrecios";
 import Valoraciones from "../Telo/Valoraciones";
 import ContactoTelo from "../Telo/ContactoTelo";
 
 const FavoritosStackNav = createNativeStackNavigator();
 const HomeStackNav = createNativeStackNavigator();
+const ConfiguracionStackNav = createNativeStackNavigator();
 
 function StackHome() {
 
@@ -146,6 +150,43 @@ function StackFavoritos() {
     </FavoritosStackNav.Navigator>
   );
 }
+function StackConfiguracion() {
+
+  const navigate = useNavigation();
+  const handleBack = () => {
+    navigate.goBack();
+  }
+
+  return (
+    <ConfiguracionStackNav.Navigator initialRoute="ContentBeforeLoginConfig">
+      <ConfiguracionStackNav.Screen
+        name="Configuracion"
+        component={ContentBeforeLoginConfig}
+        options={
+          {
+            headerShown: false,
+          }
+        }
+      />
+      <ConfiguracionStackNav.Screen
+        name="Log-in"
+        component={Login}
+        options={{
+          headerTitle: "",
+          headerTitleAlign: "center",
+        }}
+      />
+      <ConfiguracionStackNav.Screen
+        name="Registro"
+        component={Registro}
+        options={{
+          headerTitle: "",
+          headerTitleAlign: "center",
+        }}
+      />
+    </ConfiguracionStackNav.Navigator>
+  );
+}
 
 function TabGroup() {
   return (
@@ -201,7 +242,7 @@ function TabGroup() {
       />
       <Tab.Screen
         name="Configuración"
-        component={Configuracion}
+        component={StackConfiguracion}
         options={{
           headerShown: false,
         }}

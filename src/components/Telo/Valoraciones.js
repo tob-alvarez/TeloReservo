@@ -13,22 +13,46 @@ const Valoraciones = () => {
                     </View>
                     <View style={styles.contenedorPuntuaje}>
                         <View style={styles.puntajeDetalle}>
-                            <Text>Confort</Text>
-                            <Text>8.0</Text>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: ' 100%' }}>
+                                <Text>Confort</Text>
+                                <Text>8.0</Text>
+                            </View>
+                            <View style={{ borderWidth: 1, width: '100%', height: 8, borderRadius: 8 }}>
+                                <View style={styles.colorPuntaje}>
+                                </View>
+                            </View>
                         </View>
                         <View style={styles.puntajeDetalle}>
-                            <Text>Edificio</Text>
-                            <Text>7.0</Text>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: ' 100%' }}>
+                                <Text>Confort</Text>
+                                <Text>8.0</Text>
+                            </View>
+                            <View style={{ borderWidth: 1, width: '100%', height: 8, borderRadius: 8 }}>
+                                <View style={styles.colorPuntaje}>
+                                </View>
+                            </View>
                         </View>
                     </View>
                     <View style={styles.contenedorPuntuaje}>
                         <View style={styles.puntajeDetalle}>
-                            <Text>Servicio</Text>
-                            <Text>8.0</Text>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: ' 100%' }}>
+                                <Text>Confort</Text>
+                                <Text>8.0</Text>
+                            </View>
+                            <View style={{ borderWidth: 1, width: '100%', height: 8, borderRadius: 8 }}>
+                                <View style={styles.colorPuntaje}>
+                                </View>
+                            </View>
                         </View>
                         <View style={styles.puntajeDetalle}>
-                            <Text>Habitaciones</Text>
-                            <Text>8.0</Text>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: ' 100%' }}>
+                                <Text>Confort</Text>
+                                <Text>8.0</Text>
+                            </View>
+                            <View style={{ borderWidth: 1, width: '100%', height: 8, borderRadius: 8, }}>
+                                <View style={styles.colorPuntaje}>
+                                </View>
+                            </View>
                         </View>
                     </View>
                 </View>
@@ -65,11 +89,17 @@ const styles = StyleSheet.create({
     },
     puntajeDetalle: {
         width: '40%',
-        flexDirection: "row",
+        flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-between",
         gap: 10,
         marginVertical: 10,
         marginHorizontal: 20,
     },
+    colorPuntaje: {
+        width: '80%',
+        height: 6,
+        borderRadius: 8,
+        backgroundColor: 'green'
+    }
 })
