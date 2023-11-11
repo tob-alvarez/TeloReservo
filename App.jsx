@@ -4,3 +4,5 @@ import Layout from "./src/components/Layout/Layout.js";
 export default function App() {
   return <Layout />;
 }
+
+//rnfes para iniciar componente

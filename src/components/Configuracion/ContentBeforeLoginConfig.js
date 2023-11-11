@@ -20,7 +20,7 @@ const ContentBeforeLoginConfig = () => {
           onPress={() => {
             navigate("Log-in");
           }}>
-          <Text>Ingresá o creá una cuenta</Text>
+          <Text style={{ color: 'white' }}>Ingresá o creá una cuenta</Text>
         </TouchableOpacity>
       </View>
       <Text style={styles.titulo}>Alerta precios</Text>

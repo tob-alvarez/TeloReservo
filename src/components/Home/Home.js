@@ -12,6 +12,7 @@ import {
   SafeAreaView,
   Modal,
 } from "react-native";
+import Slider from "../Slider/Slider.js"
 // import MyCarousel from "../Carousel/Carousel";
 
 const Home = () => {
@@ -74,9 +75,11 @@ const Home = () => {
             <Text>Buscar</Text>
           </Pressable>
         </View>
-        <View style={{ marginTop: 20, height: 200, justifyContent: "start" }}>
+        <View style={{ marginTop: 20 }}>
           <Text style={{ marginStart: 20, fontSize: 12, color: "rgb(100, 100, 100)" }}>V I S T O S    R E C I E N T E M E N T E</Text>
-          {/* <MyCarousel /> */}
+        </View>
+        <View style={{ height: 500, justifyContent: 'start' }}>
+          <Slider />
         </View>
       </ScrollView>
     </SafeAreaView>

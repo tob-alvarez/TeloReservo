@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#f0f0f0',
         padding: 30,
-        borderTopLeftRadius: 80,
+        borderTopRightRadius: 50,
+        borderTopLeftRadius: 50,
     },
     titulo: {
         fontSize: 40,
