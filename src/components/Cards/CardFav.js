@@ -14,16 +14,17 @@ const CardFav = () => {
       <View style={[styles.card, styles.cardElevated]}>
         <View style={styles.cardBody}>
           <View>
-            <Text style={styles.cardTitle}>Gregorio</Text>
-            <Text style={styles.cardlabel}>SAN MIGUEL DE TUCUMÁN</Text>
+            <Text style={styles.cardTitle}>PRIVE</Text>
+            <Text style={styles.cardlabel}>TAFI VIEJO</Text>
 
             <View style={styles.estrellas}>
               <Ionicons name="star" size={12} color="black" />
               <Ionicons name="star" size={12} color="black" />
               <Ionicons name="star" size={12} color="black" />
+              <Ionicons name="star" size={12} color="black" />
             </View>
             <View style={styles.puntuacion}>
-              <Text style={styles.puntuaje}>7.8</Text>
+              <Text style={styles.puntuaje}>8.0</Text>
               <View>
                 <Text style={{ fontSize: 12 }}>Good</Text>
                 <Text style={{ fontSize: 10, color: "#cccbbb" }}>
@@ -42,7 +43,7 @@ const CardFav = () => {
             </View>
           </View>
           <Image
-            source={require("../../../assets/gregorioTelo.png")}
+            source={require("../../components/data/PRIVE.png")}
             style={styles.cardImage}
           />
         </View>

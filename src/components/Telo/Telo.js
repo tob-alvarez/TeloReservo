@@ -2,6 +2,7 @@ import * as React from "react";
 import { Text, ScrollView, StyleSheet, View, TouchableOpacity } from "react-native";
 import CarouselTelo from "../Carousel/CarouselTelo";
 import { Ionicons, FontAwesome5, MaterialCommunityIcons, Feather } from "@expo/vector-icons";
+import Slider from '../Slider/Slider'
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -18,7 +19,9 @@ const Telo = () => {
         backgroundColor: "#f0f0f0",
       }}
     >
-      {/* <CarouselTelo /> */}
+      <View style={{ justifyContent: 'center', }}>
+        <Slider />
+      </View>
       <View style={styles.contenedorNombreTelo}>
         <Text style={styles.tituloTelo}>Nombre Telo</Text>
         <View style={styles.contenedorEstrellas}>
@@ -97,7 +100,7 @@ export default Telo;
 
 const styles = StyleSheet.create({
   contenedorNombreTelo: {
-    paddingVertical: 50,
+    paddingVertical: 30,
     paddingHorizontal: 20,
     flexDirection: "row",
     width: '100%',

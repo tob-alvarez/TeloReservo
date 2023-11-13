@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { TouchableOpacity, Text, View, Image, StyleSheet, TextInput } from "react-native";
+import { TouchableOpacity, Text, View, Image, StyleSheet, TextInput, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
     const { navigate } = useNavigation();
 
     return (
-        <View
+        <ScrollView
             style={{
                 backgroundColor: "#f48aa0",
             }}
@@ -47,7 +47,7 @@ const Login = () => {
             <View style={styles.contenedorRedireccion}>
                 <Text>No tienes cuenta?</Text><TouchableOpacity onPress={() => navigate("Registro")}><Text style={{ color: '#f48aa0' }}>Registrarse</Text></TouchableOpacity>
             </View>
-        </View>
+        </ScrollView>
     );
 };
 
@@ -94,11 +94,11 @@ const styles = StyleSheet.create({
         borderColor: "#ccc",
         backgroundColor: "#fff",
         height: 60,
-        width: 220,
+        width: 250,
         justifyContent: "center",
     },
     boton: {
-        width: 220,
+        width: 250,
         borderRadius: 5,
         marginVertical: 15,
         paddingVertical: 5,
@@ -109,9 +109,10 @@ const styles = StyleSheet.create({
     },
     contenedorRedireccion: {
         width: '100%',
-        paddingTop: 20,
+        height: 150,
+        paddingTop: 10,
         backgroundColor: '#f0f0f0',
-        alignItems: 'center',
+        alignItems: 'start',
         flexDirection: 'row',
         justifyContent: 'center',
         gap: 5

@@ -46,9 +46,10 @@ export default Pagination;
 
 const styles = StyleSheet.create({
     container: {
-        bottom: 100,
         flexDirection: 'row',
         width: '100%',
+        position: 'absolute',
+        bottom: 10,
         alignItems: 'center',
         justifyContent: 'center',
     },

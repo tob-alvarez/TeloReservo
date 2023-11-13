@@ -78,9 +78,6 @@ const Home = () => {
         <View style={{ marginTop: 20 }}>
           <Text style={{ marginStart: 20, fontSize: 12, color: "rgb(100, 100, 100)" }}>V I S T O S    R E C I E N T E M E N T E</Text>
         </View>
-        <View style={{ height: 500, justifyContent: 'start' }}>
-          <Slider />
-        </View>
       </ScrollView>
     </SafeAreaView>
   );
