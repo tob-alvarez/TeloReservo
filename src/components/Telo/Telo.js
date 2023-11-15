@@ -32,11 +32,11 @@ const Telo = () => {
           <Ionicons name="star" size={20} color="#f48aa0" />
         </View>
       </View>
-      <View style={styles.contenedorReservar}>
+      {/* <View style={styles.contenedorReservar}>
         <TouchableOpacity style={styles.BotonReservar}>
           <Text style={{ color: 'black', fontSize: 20 }}>RESERVÁ AHORA</Text>
         </TouchableOpacity>
-      </View>
+      </View> */}
       <View style={styles.contenedorBotones}>
         <TouchableOpacity
           style={styles.touchableElevado}

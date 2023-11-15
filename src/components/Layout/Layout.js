@@ -24,6 +24,7 @@ import ContentBeforeLoginConfig from "../Configuracion/ContentBeforeLoginConfig"
 import HabitacionesPrecios from "../Telo/HabitacionesPrecios";
 import Valoraciones from "../Telo/Valoraciones";
 import ContactoTelo from "../Telo/ContactoTelo";
+import Habitacion from "../Telo/Habitacion";
 
 const FavoritosStackNav = createNativeStackNavigator();
 const HomeStackNav = createNativeStackNavigator();
@@ -129,6 +130,14 @@ function StackFavoritos() {
         options={{
           presentation: "modal",
 
+        }}
+      />
+      <FavoritosStackNav.Screen
+        name="Habitacion"
+        component={Habitacion}
+        options={{
+          presentation: "modal",
+          headerTitle: "",
         }}
       />
       <FavoritosStackNav.Screen
