@@ -22,7 +22,7 @@ const ContentBeforeLoginFavoritos = () => {
       <View>
         <View style={styles.contenedorBoton}>
           <TouchableOpacity style={styles.BotonRosita}>
-            <Text>Buscar</Text>
+            <Text style={{ color: 'white' }}>Buscar</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.BotonGris}>
             <Text>Ingresá o creá una cuenta</Text>

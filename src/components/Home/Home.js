@@ -72,7 +72,7 @@ const Home = () => {
               navigate("Lista Telos");
             }}
           >
-            <Text>Buscar</Text>
+            <Text style={{ color: 'white' }}>Buscar</Text>
           </Pressable>
         </View>
         <View style={{ marginTop: 20 }}>
