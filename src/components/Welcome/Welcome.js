@@ -9,11 +9,20 @@ import Animated, {
     interpolate,
     Extrapolate
 } from 'react-native-reanimated'
+import Pagination from './Pagination'
+import CustomButton from './CustomButton'
 
 const Welcome = () => {
 
     const { width: SCREEN_WIDTH } = useWindowDimensions();
+    const flatListRef = useAnimatedRef(null);
     const x = useSharedValue(0)
+    const flatListIndex = useSharedValue(0);
+
+    const onViewableItemChanged = ({ viewableItems }) => {
+        flatListIndex.value = viewableItems[0].index;
+    }
+
     const onScroll = useAnimatedScrollHandler({
         onScroll: event => {
             x.value = event.contentOffset.x;
@@ -90,11 +99,11 @@ const Welcome = () => {
         )
     };
 
-    // https://www.youtube.com/watch?v=b9uLJJ3aNjU seguir viendo 18min
 
     return (
         <SafeAreaView style={styles.container}>
             <Animated.FlatList
+                ref={flatListRef}
                 onScroll={onScroll}
                 data={data}
                 renderItem={({ item, index }) => {
@@ -106,7 +115,21 @@ const Welcome = () => {
                 bounces={false}
                 pagingEnabled={true}
                 showsHorizontalScrollIndicator={false}
+                onViewableItemsChanged={onViewableItemChanged}
+
             />
+            <View style={styles.bottomContainer}>
+                <Pagination
+                    data={data}
+                    x={x}
+                    screenWidth={SCREEN_WIDTH}
+                />
+                <CustomButton
+                    flatListRef={flatListRef}
+                    flatListIndex={flatListIndex}
+                    dataLenght={data.length}
+                />
+            </View>
         </SafeAreaView>
     )
 }
@@ -133,5 +156,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 18,
         marginHorizontal: 30,
+    },
+    bottomContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginHorizontal: 20,
+        marginVertical: 20,
     },
 })

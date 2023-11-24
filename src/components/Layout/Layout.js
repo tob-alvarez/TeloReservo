@@ -39,7 +39,7 @@ function StackHome() {
   }
 
   return (
-    <HomeStackNav.Navigator initialRouteName="Welcome">
+    <HomeStackNav.Navigator initialRouteName="Home">
       <HomeStackNav.Screen
         name="TabGroup"
         component={TabGroup}
@@ -247,8 +247,6 @@ function TabGroup() {
         options={{
           headerShown: false,
         }}
-      // options={{ tabBarBadge: 3 }}
-      // esta opcion es para poner notificaciones
       />
       <Tab.Screen
         name="Favoritos"
@@ -273,7 +271,7 @@ const Tab = createBottomTabNavigator();
 const Layout = ({ children }) => {
   return (
     <View style={styles.container}>
-      <View>{children}</View>
+      {children}
       <NavigationContainer
       // theme={DarkTheme}
       >
