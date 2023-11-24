@@ -12,6 +12,7 @@ import FiltroModal from "../Modals/FiltroModal";
 import ListaTelos from "../Telo/ListaTelos";
 import SortModal from "../Modals/SortModal";
 import Maps from "../Maps/Maps";
+import Welcome from "../Welcome/Welcome";
 //screenFavorites
 import Favoritos from "../Favoritos/Favoritos";
 import Telo from "../Telo/Telo";
@@ -38,7 +39,7 @@ function StackHome() {
   }
 
   return (
-    <HomeStackNav.Navigator initialRoute="HomeFeed">
+    <HomeStackNav.Navigator initialRouteName="Welcome">
       <HomeStackNav.Screen
         name="TabGroup"
         component={TabGroup}
@@ -51,6 +52,13 @@ function StackHome() {
         component={Maps}
         options={{
           presentation: "modal",
+        }}
+      />
+      <HomeStackNav.Screen
+        name="Welcome"
+        component={Welcome}
+        options={{
+          headerShown: false,
         }}
       />
       <HomeStackNav.Screen
