@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Constants from "expo-constants";
 import { useNavigation } from "@react-navigation/native";
 import {
@@ -10,14 +10,14 @@ import {
   Pressable,
   RefreshControl,
   SafeAreaView,
-  Modal,
 } from "react-native";
-import Slider from "../Slider/Slider.js"
+// import { MyContext } from "../../../context/TeloContext.js";
 // import MyCarousel from "../Carousel/Carousel";
 
 const Home = () => {
   const { navigate } = useNavigation();
   const [refreshing, setRefreshing] = React.useState(false);
+  // const { myState, updateState } = useContext(MyContext);
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);

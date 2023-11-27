@@ -39,10 +39,17 @@ function StackHome() {
   }
 
   return (
-    <HomeStackNav.Navigator initialRouteName="Home">
+    <HomeStackNav.Navigator initialRouteName="Welcome">
       <HomeStackNav.Screen
         name="TabGroup"
         component={TabGroup}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <HomeStackNav.Screen
+        name="Welcome"
+        component={Welcome}
         options={{
           headerShown: false,
         }}
@@ -52,13 +59,6 @@ function StackHome() {
         component={Maps}
         options={{
           presentation: "modal",
-        }}
-      />
-      <HomeStackNav.Screen
-        name="Welcome"
-        component={Welcome}
-        options={{
-          headerShown: false,
         }}
       />
       <HomeStackNav.Screen
@@ -96,7 +96,6 @@ function StackHome() {
     </HomeStackNav.Navigator>
   );
 }
-
 function StackFavoritos() {
 
   const navigate = useNavigation();
@@ -204,7 +203,6 @@ function StackConfiguracion() {
     </ConfiguracionStackNav.Navigator>
   );
 }
-
 function TabGroup() {
   return (
     <Tab.Navigator

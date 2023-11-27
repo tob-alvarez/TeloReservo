@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, SafeAreaView, FlatList, useWindowDimensions, Image } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, useWindowDimensions, } from 'react-native'
 import React from 'react'
 import data from './data'
 import Animated, {

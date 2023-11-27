@@ -48,13 +48,15 @@ const CustomButton = ({ flatListRef, flatListIndex, dataLength }) => {
             ],
         };
     });
+
+
     return (
         <TouchableWithoutFeedback
             onPress={() => {
                 if (flatListIndex.value < dataLength - 1) {
                     flatListRef.current.scrollToIndex({ index: flatListIndex.value + 1 });
                 } else {
-                    navigate('Home');
+                    navigate('TabGroup');
                 }
             }}>
             <Animated.View style={[styles.container, buttonAnimationStyle]}>
