@@ -1,9 +1,38 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { TouchableOpacity, Text, View, Image, StyleSheet, TextInput, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import axios from "../../../config/axios";
 
 const Registro = () => {
+    const formDataRef = useRef({
+        user: '',
+        email: '',
+        password: '',
+        repeatPassword: '',
+    })
+
+    const handleChange = (name, value) => {
+        formDataRef.current = {
+            ...formDataRef.current,
+            [name]: value
+        };
+    };
     const navigation = useNavigation();
+    const agregarUsuario = async () => {
+        try {
+            const respuesta = await axios.post("/users/alta", formDataRef.current);
+            formDataRef.current = {
+                userName: '',
+                email: '',
+                password: '',
+                repeatPassword: '',
+            }
+            navigation.navigate('Configuracion')
+        } catch (error) {
+            console.log("Error al enviar los datos. Intente nuevamente más tarde.");
+        }
+    };
+
 
     return (
         <ScrollView
@@ -29,6 +58,8 @@ const Registro = () => {
                     <TextInput
                         placeholder="Pepito15"
                         style={styles.input}
+                        defaultValue={formDataRef.current.user}
+                        onChangeText={(value) => handleChange("userName", value)}
                     ></TextInput>
                 </View>
                 <View>
@@ -36,6 +67,8 @@ const Registro = () => {
                     <TextInput
                         placeholder="ejemplo@gmail.com"
                         style={styles.input}
+                        defaultValue={formDataRef.current.email}
+                        onChangeText={(value) => handleChange("email", value)}
                     ></TextInput>
                 </View>
                 <View>
@@ -43,6 +76,8 @@ const Registro = () => {
                     <TextInput
                         placeholder="***********"
                         style={styles.input}
+                        defaultValue={formDataRef.current.password}
+                        onChangeText={(value) => handleChange("password", value)}
                     ></TextInput>
                 </View>
                 <View>
@@ -50,9 +85,11 @@ const Registro = () => {
                     <TextInput
                         placeholder="***********"
                         style={styles.input}
+                        defaultValue={formDataRef.current.repeatPassword}
+                        onChangeText={(value) => handleChange("repeatPassword", value)}
                     ></TextInput>
                 </View>
-                <TouchableOpacity style={styles.boton}>
+                <TouchableOpacity style={styles.boton} onPress={agregarUsuario}>
                     <Text style={{ color: 'white' }}>
                         Registrarse
                     </Text>

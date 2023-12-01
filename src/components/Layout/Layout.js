@@ -98,11 +98,6 @@ function StackHome() {
 }
 function StackFavoritos() {
 
-  const navigate = useNavigation();
-  const handleBack = () => {
-    navigate.goBack();
-  }
-
   return (
     <FavoritosStackNav.Navigator initialRoute="FavoritosHome">
       <FavoritosStackNav.Screen
@@ -136,7 +131,6 @@ function StackFavoritos() {
         component={HabitacionesPrecios}
         options={{
           presentation: "modal",
-
         }}
       />
       <FavoritosStackNav.Screen
@@ -168,13 +162,8 @@ function StackFavoritos() {
 }
 function StackConfiguracion() {
 
-  const navigate = useNavigation();
-  const handleBack = () => {
-    navigate.goBack();
-  }
-
   return (
-    <ConfiguracionStackNav.Navigator initialRoute="ContentBeforeLoginConfig">
+    <ConfiguracionStackNav.Navigator initialRouteName="ContentBeforeLoginConfig">
       <ConfiguracionStackNav.Screen
         name="Configuracion"
         component={ContentBeforeLoginConfig}
