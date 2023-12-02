@@ -1,9 +1,39 @@
-import React, { useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { TouchableOpacity, Text, View, Image, StyleSheet, TextInput, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import axios from "../../../config/axios";
+import TeloContext from "../../../context/TeloContext";
 
 const Login = () => {
     const { navigate } = useNavigation();
+    const { setAuthenticated, setUser } = useContext(TeloContext);
+
+    const formDataRef = useRef({
+        nombreUsuario: '',
+        contraseña: '',
+    })
+
+    const handleChange = (name, value) => {
+        formDataRef.current = {
+            ...formDataRef.current,
+            [name]: value
+        };
+    };
+    const loginBack = async () => {
+        try {
+            const { data } = await axios.post("/users/login", formDataRef.current);
+            formDataRef.current = {
+                nombreUsuario: '',
+                contraseña: '',
+            }
+            setAuthenticated(!!data.user)
+            setUser(data.user);
+            axios.defaults.headers.common["Authorization"] = data.token;
+            navigate('Configuracion')
+        } catch (error) {
+            console.log("Error al enviar los datos. Intente nuevamente más tarde.");
+        }
+    };
 
     return (
         <ScrollView
@@ -25,10 +55,12 @@ const Login = () => {
             </View>
             <View style={styles.contenedorForm}>
                 <View>
-                    <Text style={styles.label}>Email o usuario</Text>
+                    <Text style={styles.label}>Usuario</Text>
                     <TextInput
-                        placeholder="ejemplo@gmail.com"
+                        placeholder="Pepito15"
                         style={styles.input}
+                        defaultValue={formDataRef.current.nombreUsuario}
+                        onChangeText={(value) => handleChange("nombreUsuario", value)}
                     ></TextInput>
                 </View>
                 <View>
@@ -36,9 +68,11 @@ const Login = () => {
                     <TextInput
                         placeholder="***********"
                         style={styles.input}
+                        defaultValue={formDataRef.current.contraseña}
+                        onChangeText={(value) => handleChange("contraseña", value)}
                     ></TextInput>
                 </View>
-                <TouchableOpacity style={styles.boton}>
+                <TouchableOpacity style={styles.boton} onPress={loginBack}>
                     <Text style={{ color: 'white' }}>
                         Ingresar
                     </Text>

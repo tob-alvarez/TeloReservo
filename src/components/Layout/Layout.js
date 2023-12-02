@@ -18,9 +18,9 @@ import Favoritos from "../Favoritos/Favoritos";
 import Telo from "../Telo/Telo";
 import Comodidades from "../Telo/Comodidades";
 //screenConfiguration
-import Login from "../Configuracion/Login";
-import Registro from "../Configuracion/Registro";
-import ContentBeforeLoginConfig from "../Configuracion/ContentBeforeLoginConfig";
+// import Login from "../Configuracion/Login";
+// import Registro from "../Configuracion/Registro";
+import Configuracion from "../Configuracion/Configuracion";
 //screensTelo
 import HabitacionesPrecios from "../Telo/HabitacionesPrecios";
 import Valoraciones from "../Telo/Valoraciones";
@@ -166,14 +166,14 @@ function StackConfiguracion() {
     <ConfiguracionStackNav.Navigator initialRouteName="ContentBeforeLoginConfig">
       <ConfiguracionStackNav.Screen
         name="Configuracion"
-        component={ContentBeforeLoginConfig}
+        component={Configuracion}
         options={
           {
             headerShown: false,
           }
         }
       />
-      <ConfiguracionStackNav.Screen
+      {/* <ConfiguracionStackNav.Screen
         name="Log-in"
         component={Login}
         options={{
@@ -188,7 +188,7 @@ function StackConfiguracion() {
           headerTitle: "",
           headerTitleAlign: "center",
         }}
-      />
+      /> */}
     </ConfiguracionStackNav.Navigator>
   );
 }

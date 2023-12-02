@@ -1,17 +1,16 @@
 import React, { createContext, useContext, useState } from 'react';
-
+import axios from '../config/axios';
 export const MyContext = createContext();
 
 
 const TeloContext = ({ children }) => {
-    const [myState, setMyState] = useState('Valor inicial');
+    const [authenticated, setAuthenticated] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState(null);
 
-    const updateState = () => {
-        setMyState('Nuevo valor');
-    };
 
     return (
-        <MyContext.Provider value={{ myState, updateState }}>
+        <MyContext.Provider value={{ user, authenticated, loading, setAuthenticated, setUser }}>
             {children}
         </MyContext.Provider>
     );

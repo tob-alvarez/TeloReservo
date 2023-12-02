@@ -27,7 +27,7 @@ const Registro = () => {
                 password: '',
                 repeatPassword: '',
             }
-            navigation.navigate('Configuracion')
+            navigation.navigate('Log-in')
         } catch (error) {
             console.log("Error al enviar los datos. Intente nuevamente más tarde.");
         }

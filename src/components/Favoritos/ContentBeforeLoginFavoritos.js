@@ -24,9 +24,6 @@ const ContentBeforeLoginFavoritos = () => {
           <TouchableOpacity style={styles.BotonRosita}>
             <Text style={{ color: 'white' }}>Buscar</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.BotonGris}>
-            <Text>Ingresá o creá una cuenta</Text>
-          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -60,14 +57,7 @@ const styles = StyleSheet.create({
   },
   BotonRosita: {
     backgroundColor: "#f48aa0",
-    width: '100%',
-    paddingVertical: 10,
-    borderRadius: 5,
-    alignItems: "center",
-  },
-  BotonGris: {
-    backgroundColor: "#fafaf0",
-    width: 250,
+    width: 300,
     paddingVertical: 10,
     borderRadius: 5,
     alignItems: "center",
@@ -75,6 +65,7 @@ const styles = StyleSheet.create({
   contenedorBoton: {
     alignItems: "center",
     marginTop: 20,
+    width: '100%',
     gap: 20,
   },
 });
